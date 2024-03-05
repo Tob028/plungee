@@ -16,6 +16,9 @@ struct plungee_Watch_AppApp: App {
             NavigationStack {
                 HomeView()
             }
+            .sheet(isPresented: $workoutManager.showingSummaryView) {
+                SummaryView()
+            }
             .environmentObject(workoutManager)
         }
     }

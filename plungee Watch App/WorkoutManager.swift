@@ -18,6 +18,14 @@ class WorkoutManager: NSObject, ObservableObject {
         }
     }
     
+    @Published var showingSummaryView: Bool = false {
+        didSet {
+            if showingSummaryView == false {
+                resetWorkout()
+            }
+        }
+    }
+    
     let healthStore = HKHealthStore()
     var session: HKWorkoutSession?
     var builder: HKLiveWorkoutBuilder?
@@ -78,7 +86,7 @@ class WorkoutManager: NSObject, ObservableObject {
     
     func togglePause() {
         if running {
-            pause()
+            self.pause()
         } else {
             resume()
         }
@@ -86,11 +94,37 @@ class WorkoutManager: NSObject, ObservableObject {
     
     func end() {
         session?.end()
+        showingSummaryView = true
     }
     
     // MARK: - Workout Metrics
+    @Published var averageHeartRate: Double = 0
+    @Published var heartRate: Double = 0
+    @Published var workout: HKWorkout?
+    
+    
     func updateForStatistics(_ statistics: HKStatistics?) {
         guard let statistics = statistics else { return }
+        
+        DispatchQueue.main.async {
+            switch statistics.quantityType {
+            case HKQuantityType.quantityType(forIdentifier: .heartRate):
+                let heartRateUnit = HKUnit.count().unitDivided(by: .minute())
+                self.heartRate = statistics.mostRecentQuantity()?.doubleValue(for: heartRateUnit) ?? 0
+                self.averageHeartRate = statistics.averageQuantity()?.doubleValue(for: heartRateUnit) ?? 0
+            default:
+                return
+            }
+        }
+    }
+    
+    func resetWorkout() {
+        selectedWorkout = nil
+        builder = nil
+        workout = nil
+        session = nil
+        averageHeartRate = 0
+        heartRate = 0
     }
 }
 

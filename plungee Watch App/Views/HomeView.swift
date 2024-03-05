@@ -9,18 +9,25 @@ import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject var workoutManager: WorkoutManager
+    @State var presentedWorkout: [ExposureType] = []
     var workoutTypes: [ExposureType] = [.plunge, .shower, .sauna]
+    
     var body: some View {
         TabView {
-            NavigationStack {
+            NavigationStack(path: $presentedWorkout) {
                 List(workoutTypes) { workoutType in
                     NavigationLink(
                         workoutType.id,
                         value: workoutType
-                    ).navigationDestination(for: ExposureType.self) { workoutType in
+                    )
+                    .padding(EdgeInsets(top: 15, leading: 5, bottom: 15, trailing: 5))
+                    .navigationDestination(for: ExposureType.self) { workoutType in
                         SessionPagingView()
                     }
-                    .padding(EdgeInsets(top: 15, leading: 5, bottom: 15, trailing: 5))
+                    .onChange(of: presentedWorkout) {
+                        guard let workout = presentedWorkout.last else { return }
+                        workoutManager.selectedWorkout = workout
+                    }
                 }
                 .listStyle(.carousel)
                 .navigationTitle("plungee")

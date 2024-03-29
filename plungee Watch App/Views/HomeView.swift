@@ -10,7 +10,6 @@ import SwiftUI
 struct HomeView: View {
     @EnvironmentObject var workoutManager: WorkoutManager
     @State var presentedWorkout: [ExposureType] = []
-    var workoutTypes: [ExposureType] = [.plunge, .shower, .sauna]
     
     var body: some View {
         TabView {
@@ -31,6 +30,7 @@ struct HomeView: View {
                 }
                 .listStyle(.carousel)
                 .navigationTitle("plungee")
+                .navigationBarTitleDisplayMode(.large)
                 .onAppear() {
                     workoutManager.requestAuthorisation()
                 }

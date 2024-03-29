@@ -23,8 +23,14 @@ struct SummaryView: View {
                 .navigationBarHidden(true)
         } else {
             ScrollView {
-                VStack {
-                    Text("Summary")
+                VStack(alignment: .leading) {
+                    SummaryMetricView(title: "Total Time",
+                                      value: durationFormatter.string(from: workoutManager.workout?.duration ?? 0.0) ?? "")
+                        .foregroundStyle(.yellow)
+                    SummaryMetricView(title: "Avg. Heart Rate",
+                                      value: workoutManager.averageHeartRate.formatted(.number.precision(.fractionLength(0))) + " bpm")
+                        .foregroundStyle(.red)
+
                     
                     Button("Done") {
                         dismiss()
@@ -40,4 +46,17 @@ struct SummaryView: View {
 
 #Preview {
     SummaryView().environmentObject(WorkoutManager())
+}
+
+struct SummaryMetricView: View {
+    var title: String
+    var value: String
+
+    var body: some View {
+        Text(title)
+            .foregroundStyle(.white)
+        Text(value)
+            .font(.system(.title2, design: .rounded).lowercaseSmallCaps())
+        Divider()
+    }
 }

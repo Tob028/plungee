@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		98663DFF2BB6095800608098 /* TabbedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98663DFE2BB6095800608098 /* TabbedView.swift */; };
+		98663E012BB6097D00608098 /* TabItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98663E002BB6097D00608098 /* TabItems.swift */; };
 		98688E0C2B55837500638572 /* plungeeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98688E0B2B55837500638572 /* plungeeApp.swift */; };
-		98688E0E2B55837500638572 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98688E0D2B55837500638572 /* ContentView.swift */; };
+		98688E0E2B55837500638572 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98688E0D2B55837500638572 /* MainView.swift */; };
 		98688E102B55837700638572 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98688E0F2B55837700638572 /* Assets.xcassets */; };
 		98688E132B55837700638572 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98688E122B55837700638572 /* Preview Assets.xcassets */; };
 		98688E192B55837700638572 /* plungee Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 98688E182B55837700638572 /* plungee Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -25,6 +27,10 @@
 		98A1BFBE2B97110B00D87A9F /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A1BFBD2B97110B00D87A9F /* SummaryView.swift */; };
 		98D7240F2B6053C9007A20AD /* ControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D7240E2B6053C9007A20AD /* ControlsView.swift */; };
 		98D724112B605A07007A20AD /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D724102B605A07007A20AD /* WorkoutManager.swift */; };
+		98E0ED6A2BB6033A00AE977C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E0ED692BB6033A00AE977C /* SettingsView.swift */; };
+		98E0ED6C2BB6034900AE977C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E0ED6B2BB6034900AE977C /* HomeView.swift */; };
+		98E0ED6E2BB6035400AE977C /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E0ED6D2BB6035400AE977C /* StatsView.swift */; };
+		98E0ED702BB604A400AE977C /* SessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E0ED6F2BB604A400AE977C /* SessionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,9 +58,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		98663DFE2BB6095800608098 /* TabbedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedView.swift; sourceTree = "<group>"; };
+		98663E002BB6097D00608098 /* TabItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItems.swift; sourceTree = "<group>"; };
 		98688E082B55837500638572 /* plungee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = plungee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98688E0B2B55837500638572 /* plungeeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = plungeeApp.swift; sourceTree = "<group>"; };
-		98688E0D2B55837500638572 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		98688E0D2B55837500638572 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		98688E0F2B55837700638572 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		98688E122B55837700638572 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		98688E182B55837700638572 /* plungee Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "plungee Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +79,10 @@
 		98D724102B605A07007A20AD /* WorkoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutManager.swift; sourceTree = "<group>"; };
 		98D724122B61A56C007A20AD /* plungee Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "plungee Watch App.entitlements"; sourceTree = "<group>"; };
 		98D724132B61A583007A20AD /* plungee-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "plungee-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
+		98E0ED692BB6033A00AE977C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		98E0ED6B2BB6034900AE977C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		98E0ED6D2BB6035400AE977C /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
+		98E0ED6F2BB604A400AE977C /* SessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				98688E0B2B55837500638572 /* plungeeApp.swift */,
-				98688E0D2B55837500638572 /* ContentView.swift */,
+				98E0ED642BB6027C00AE977C /* Views */,
 				98688E0F2B55837700638572 /* Assets.xcassets */,
 				98688E112B55837700638572 /* Preview Content */,
 			);
@@ -168,6 +180,20 @@
 				98688E362B56730600638572 /* MetricsView.swift */,
 				98D7240E2B6053C9007A20AD /* ControlsView.swift */,
 				98A1BFBD2B97110B00D87A9F /* SummaryView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		98E0ED642BB6027C00AE977C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				98688E0D2B55837500638572 /* MainView.swift */,
+				98E0ED6B2BB6034900AE977C /* HomeView.swift */,
+				98E0ED6D2BB6035400AE977C /* StatsView.swift */,
+				98E0ED692BB6033A00AE977C /* SettingsView.swift */,
+				98E0ED6F2BB604A400AE977C /* SessionView.swift */,
+				98663DFE2BB6095800608098 /* TabbedView.swift */,
+				98663E002BB6097D00608098 /* TabItems.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -274,9 +300,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98688E0E2B55837500638572 /* ContentView.swift in Sources */,
+				98E0ED6A2BB6033A00AE977C /* SettingsView.swift in Sources */,
+				98688E0E2B55837500638572 /* MainView.swift in Sources */,
 				98688E302B55864500638572 /* ExposureType.swift in Sources */,
+				98E0ED702BB604A400AE977C /* SessionView.swift in Sources */,
+				98663DFF2BB6095800608098 /* TabbedView.swift in Sources */,
+				98E0ED6C2BB6034900AE977C /* HomeView.swift in Sources */,
 				98688E402B57BF2800638572 /* ElapsedTimeView.swift in Sources */,
+				98E0ED6E2BB6035400AE977C /* StatsView.swift in Sources */,
+				98663E012BB6097D00608098 /* TabItems.swift in Sources */,
 				98688E0C2B55837500638572 /* plungeeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

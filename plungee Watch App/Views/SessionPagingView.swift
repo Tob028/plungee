@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SessionPagingView: View {
     @EnvironmentObject var workoutManager: WorkoutManager
+    @Environment(\.isLuminanceReduced) var isLuminanceReduced
     @State private var selection: Tab = .metrics
     
     enum Tab {
@@ -24,6 +25,10 @@ struct SessionPagingView: View {
         .navigationBarBackButtonHidden()
         //.toolbar(.hidden)
         .onChange(of: workoutManager.running) {
+            displayMetricsView()
+        }
+        .tabViewStyle(PageTabViewStyle(indexDisplayMode: isLuminanceReduced ? .never : .automatic))
+        .onChange(of: isLuminanceReduced) {
             displayMetricsView()
         }
     }

@@ -14,9 +14,7 @@ struct ControlsView: View {
         VStack {
             HStack {
                 VStack {
-                    Button {
-                        workoutManager.end()
-                    } label: {
+                    Button(action: workoutManager.end) {
                         Image(systemName: "xmark")
                     }
                     .tint(.red)
@@ -25,9 +23,7 @@ struct ControlsView: View {
                 }
                 
                 VStack {
-                    Button {
-                        workoutManager.togglePause()
-                    } label: {
+                    Button(action: workoutManager.togglePause) {
                         Image(systemName: workoutManager.running ? "pause" : "play.fill")
                     }
                     .tint(.yellow)
@@ -37,9 +33,7 @@ struct ControlsView: View {
             }
             
             VStack {
-                Button {
-                    WKInterfaceDevice().enableWaterLock()
-                } label: {
+                Button(action: WKInterfaceDevice().enableWaterLock) {
                     Image(systemName: "drop.fill")
                 }
                 .tint(.cyan)

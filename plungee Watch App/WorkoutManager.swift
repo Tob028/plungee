@@ -9,7 +9,8 @@ import Foundation
 import HealthKit
 
 class WorkoutManager: NSObject, ObservableObject {
-    var selectedWorkout: ExposureType? {
+    /*
+     var selectedWorkout: ExposureType? {
         didSet {
             guard let selectedWorkout = selectedWorkout else {
                 return
@@ -17,6 +18,9 @@ class WorkoutManager: NSObject, ObservableObject {
             startWorkout(workoutType: selectedWorkout)
         }
     }
+    */
+    
+    @Published var navigationPath: [ExposureType] = []
     
     @Published var showingSummaryView: Bool = false {
         didSet {
@@ -94,6 +98,7 @@ class WorkoutManager: NSObject, ObservableObject {
     
     func end() {
         session?.end()
+        navigationPath = []
         showingSummaryView = true
     }
     
@@ -119,7 +124,7 @@ class WorkoutManager: NSObject, ObservableObject {
     }
     
     func resetWorkout() {
-        selectedWorkout = nil
+        //selectedWorkout = nil
         builder = nil
         workout = nil
         session = nil
@@ -138,7 +143,7 @@ extension WorkoutManager: HKWorkoutSessionDelegate {
         
         if toState == .ended {
             builder?.endCollection(withEnd: date) { (success, error) in
-                self.builder?.finishWorkout() { (workout, error) in
+                self.builder?.finishWorkout { (workout, error) in
                     DispatchQueue.main.async {
                         self.workout = workout
                     }

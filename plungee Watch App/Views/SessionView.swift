@@ -1,16 +1,18 @@
 //
-//  SessionPagingView.swift
-//  plungee
+//  SessionView.swift
+//  plungee Watch App
 //
-//  Created by Tobias on 16/01/2024.
+//  Created by Tobias on 31/03/2024.
 //
 
 import SwiftUI
 
-struct SessionPagingView: View {
+struct SessionView: View {
     @EnvironmentObject var workoutManager: WorkoutManager
     @Environment(\.isLuminanceReduced) var isLuminanceReduced
     @State private var selection: Tab = .metrics
+    
+    var selectedExposureType: ExposureType
     
     enum Tab {
         case controls, metrics
@@ -21,9 +23,8 @@ struct SessionPagingView: View {
             ControlsView().tag(Tab.controls)
             MetricsView().tag(Tab.metrics)
         }
-        .navigationTitle(workoutManager.selectedWorkout?.id ?? "")
         .navigationBarBackButtonHidden()
-        //.toolbar(.hidden)
+        .toolbar(.hidden)
         .onChange(of: workoutManager.running) {
             displayMetricsView()
         }
@@ -31,6 +32,9 @@ struct SessionPagingView: View {
         .onChange(of: isLuminanceReduced) {
             displayMetricsView()
         }
+        .onAppear(perform: {
+            workoutManager.startWorkout(workoutType: selectedExposureType)
+        })
     }
     
     private func displayMetricsView() {
@@ -41,5 +45,5 @@ struct SessionPagingView: View {
 }
 
 #Preview {
-    SessionPagingView().environmentObject(WorkoutManager())
+    SessionView(selectedExposureType: .plunge).environmentObject(WorkoutManager())
 }

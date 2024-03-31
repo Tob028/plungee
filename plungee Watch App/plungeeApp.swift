@@ -13,11 +13,9 @@ struct plungee_Watch_AppApp: App {
     
     var body: some Scene {
         WindowGroup {
-            NavigationStack {
-                HomeView()
-            }
-            .sheet(isPresented: $workoutManager.showingSummaryView) {
-                SummaryView()
+            TabView {
+                StartView()
+                Text("stats")
             }
             .environmentObject(workoutManager)
         }

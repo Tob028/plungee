@@ -15,12 +15,15 @@ struct TabbedView: View {
             TabView(selection: $selectedTab) {
                 HomeView()
                     .tag(0)
+                    .toolbar(.hidden, for: .tabBar)
                 
                 StatsView()
                     .tag(1)
+                    .toolbar(.hidden, for: .tabBar)
                 
                 SettingsView()
                     .tag(2)
+                    .toolbar(.hidden, for: .tabBar)
             }
         }
         
@@ -56,7 +59,7 @@ extension TabbedView {
                 
                 if (isActive) {
                     Text(title)
-                        .font(.system(size: 14))
+                        .bold()
                         .foregroundColor(isActive ? .black : .gray)
                 }
                 

@@ -2,7 +2,7 @@
 //  SummaryView.swift
 //  plungee Watch App
 //
-//  Created by Tobias on 05/03/2024.
+//  Created by Tobias on 31/03/2024.
 //
 
 import SwiftUI
@@ -34,6 +34,7 @@ struct SummaryView: View {
                     
                     Button("Done") {
                         dismiss()
+                        workoutManager.showingSummaryView = false
                     }
                 }
                 .scenePadding()

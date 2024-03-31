@@ -15,17 +15,17 @@
 		98688E132B55837700638572 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98688E122B55837700638572 /* Preview Assets.xcassets */; };
 		98688E192B55837700638572 /* plungee Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 98688E182B55837700638572 /* plungee Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		98688E1E2B55837700638572 /* plungeeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98688E1D2B55837700638572 /* plungeeApp.swift */; };
-		98688E202B55837700638572 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98688E1F2B55837700638572 /* HomeView.swift */; };
 		98688E222B55837900638572 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98688E212B55837900638572 /* Assets.xcassets */; };
 		98688E252B55837900638572 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98688E242B55837900638572 /* Preview Assets.xcassets */; };
 		98688E302B55864500638572 /* ExposureType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98688E2F2B55864500638572 /* ExposureType.swift */; };
 		98688E312B55864500638572 /* ExposureType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98688E2F2B55864500638572 /* ExposureType.swift */; };
-		98688E352B56721600638572 /* SessionPagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98688E332B56721600638572 /* SessionPagingView.swift */; };
-		98688E382B56730600638572 /* MetricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98688E362B56730600638572 /* MetricsView.swift */; };
 		98688E3C2B569CE400638572 /* ElapsedTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98688E3A2B569CE400638572 /* ElapsedTimeView.swift */; };
 		98688E402B57BF2800638572 /* ElapsedTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98688E3A2B569CE400638572 /* ElapsedTimeView.swift */; };
-		98A1BFBE2B97110B00D87A9F /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A1BFBD2B97110B00D87A9F /* SummaryView.swift */; };
-		98D7240F2B6053C9007A20AD /* ControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D7240E2B6053C9007A20AD /* ControlsView.swift */; };
+		98B2221D2BB961EA0086D842 /* SessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B2221C2BB961EA0086D842 /* SessionView.swift */; };
+		98B2221F2BB962CA0086D842 /* MetricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B2221E2BB962CA0086D842 /* MetricsView.swift */; };
+		98B222212BB962D60086D842 /* ControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B222202BB962D60086D842 /* ControlsView.swift */; };
+		98B222232BB9B4280086D842 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B222222BB9B4280086D842 /* SummaryView.swift */; };
+		98BCE86B2BB95B5F006F454D /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BCE86A2BB95B5F006F454D /* StartView.swift */; };
 		98D724112B605A07007A20AD /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D724102B605A07007A20AD /* WorkoutManager.swift */; };
 		98E0ED6A2BB6033A00AE977C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E0ED692BB6033A00AE977C /* SettingsView.swift */; };
 		98E0ED6C2BB6034900AE977C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E0ED6B2BB6034900AE977C /* HomeView.swift */; };
@@ -67,15 +67,15 @@
 		98688E122B55837700638572 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		98688E182B55837700638572 /* plungee Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "plungee Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		98688E1D2B55837700638572 /* plungeeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = plungeeApp.swift; sourceTree = "<group>"; };
-		98688E1F2B55837700638572 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		98688E212B55837900638572 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		98688E242B55837900638572 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		98688E2F2B55864500638572 /* ExposureType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureType.swift; sourceTree = "<group>"; };
-		98688E332B56721600638572 /* SessionPagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionPagingView.swift; sourceTree = "<group>"; };
-		98688E362B56730600638572 /* MetricsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsView.swift; sourceTree = "<group>"; };
 		98688E3A2B569CE400638572 /* ElapsedTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElapsedTimeView.swift; sourceTree = "<group>"; };
-		98A1BFBD2B97110B00D87A9F /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
-		98D7240E2B6053C9007A20AD /* ControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsView.swift; sourceTree = "<group>"; };
+		98B2221C2BB961EA0086D842 /* SessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionView.swift; sourceTree = "<group>"; };
+		98B2221E2BB962CA0086D842 /* MetricsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsView.swift; sourceTree = "<group>"; };
+		98B222202BB962D60086D842 /* ControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsView.swift; sourceTree = "<group>"; };
+		98B222222BB9B4280086D842 /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
+		98BCE86A2BB95B5F006F454D /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		98D724102B605A07007A20AD /* WorkoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutManager.swift; sourceTree = "<group>"; };
 		98D724122B61A56C007A20AD /* plungee Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "plungee Watch App.entitlements"; sourceTree = "<group>"; };
 		98D724132B61A583007A20AD /* plungee-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "plungee-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -103,6 +103,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		986538362BB6A7510091DA64 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				98663E002BB6097D00608098 /* TabItems.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		98688DFF2B55837500638572 = {
 			isa = PBXGroup;
 			children = (
@@ -148,7 +156,7 @@
 				98D724122B61A56C007A20AD /* plungee Watch App.entitlements */,
 				98688E1D2B55837700638572 /* plungeeApp.swift */,
 				98D724102B605A07007A20AD /* WorkoutManager.swift */,
-				98688E392B56731B00638572 /* Views */,
+				98BCE8692BB95B4C006F454D /* Views */,
 				98688E212B55837900638572 /* Assets.xcassets */,
 				98688E232B55837900638572 /* Preview Content */,
 			);
@@ -172,14 +180,14 @@
 			path = Shared;
 			sourceTree = "<group>";
 		};
-		98688E392B56731B00638572 /* Views */ = {
+		98BCE8692BB95B4C006F454D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				98688E1F2B55837700638572 /* HomeView.swift */,
-				98688E332B56721600638572 /* SessionPagingView.swift */,
-				98688E362B56730600638572 /* MetricsView.swift */,
-				98D7240E2B6053C9007A20AD /* ControlsView.swift */,
-				98A1BFBD2B97110B00D87A9F /* SummaryView.swift */,
+				98BCE86A2BB95B5F006F454D /* StartView.swift */,
+				98B2221C2BB961EA0086D842 /* SessionView.swift */,
+				98B2221E2BB962CA0086D842 /* MetricsView.swift */,
+				98B222202BB962D60086D842 /* ControlsView.swift */,
+				98B222222BB9B4280086D842 /* SummaryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -193,7 +201,7 @@
 				98E0ED692BB6033A00AE977C /* SettingsView.swift */,
 				98E0ED6F2BB604A400AE977C /* SessionView.swift */,
 				98663DFE2BB6095800608098 /* TabbedView.swift */,
-				98663E002BB6097D00608098 /* TabItems.swift */,
+				986538362BB6A7510091DA64 /* Utils */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -245,7 +253,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1520;
-				LastUpgradeCheck = 1520;
+				LastUpgradeCheck = 1530;
 				TargetAttributes = {
 					98688E072B55837500638572 = {
 						CreatedOnToolsVersion = 15.2;
@@ -317,15 +325,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98D7240F2B6053C9007A20AD /* ControlsView.swift in Sources */,
-				98688E202B55837700638572 /* HomeView.swift in Sources */,
-				98688E382B56730600638572 /* MetricsView.swift in Sources */,
+				98BCE86B2BB95B5F006F454D /* StartView.swift in Sources */,
+				98B2221F2BB962CA0086D842 /* MetricsView.swift in Sources */,
 				98688E312B55864500638572 /* ExposureType.swift in Sources */,
+				98B2221D2BB961EA0086D842 /* SessionView.swift in Sources */,
+				98B222212BB962D60086D842 /* ControlsView.swift in Sources */,
 				98688E1E2B55837700638572 /* plungeeApp.swift in Sources */,
 				98D724112B605A07007A20AD /* WorkoutManager.swift in Sources */,
 				98688E3C2B569CE400638572 /* ElapsedTimeView.swift in Sources */,
-				98688E352B56721600638572 /* SessionPagingView.swift in Sources */,
-				98A1BFBE2B97110B00D87A9F /* SummaryView.swift in Sources */,
+				98B222232BB9B4280086D842 /* SummaryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +382,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -435,6 +444,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;

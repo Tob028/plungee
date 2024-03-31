@@ -13,7 +13,7 @@ enum ExposureType: String {
     case sauna = "Sauna"
 }
 
-var workoutTypes: [ExposureType] = [.plunge, .shower, .sauna]
+var exposureTypes: [ExposureType] = [.plunge, .shower, .sauna]
 
 extension ExposureType: Identifiable {
     var id: String { rawValue }

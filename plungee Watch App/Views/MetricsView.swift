@@ -1,14 +1,15 @@
 //
 //  MetricsView.swift
-//  plungee
+//  plungee Watch App
 //
-//  Created by Tobias on 16/01/2024.
+//  Created by Tobias on 31/03/2024.
 //
 
 import SwiftUI
 
 struct MetricsView: View {
     @EnvironmentObject var workoutManager: WorkoutManager
+    
     var body: some View {
         TimelineView(
             MetricsTimelineSchedule(from: workoutManager.builder?.startDate ?? Date())
@@ -40,6 +41,7 @@ struct MetricsView: View {
             .ignoresSafeArea(edges: .bottom)
             .scenePadding()
         }
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

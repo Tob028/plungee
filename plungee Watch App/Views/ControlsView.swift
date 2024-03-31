@@ -2,7 +2,7 @@
 //  ControlsView.swift
 //  plungee Watch App
 //
-//  Created by Tobias on 23/01/2024.
+//  Created by Tobias on 31/03/2024.
 //
 
 import SwiftUI
@@ -33,11 +33,12 @@ struct ControlsView: View {
             }
             
             VStack {
-                Button(action: WKInterfaceDevice().enableWaterLock) {
+                Button(action: WKInterfaceDevice.current().enableWaterLock) {
                     Image(systemName: "drop.fill")
                 }
                 .tint(.cyan)
                 .font(.title2)
+                
                 Text("Lock")
             }
         }

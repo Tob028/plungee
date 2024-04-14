@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		98663DFF2BB6095800608098 /* TabbedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98663DFE2BB6095800608098 /* TabbedView.swift */; };
+		98404C462BBE88E5006C4700 /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98404C452BBE88E5006C4700 /* WorkoutManager.swift */; };
 		98663E012BB6097D00608098 /* TabItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98663E002BB6097D00608098 /* TabItems.swift */; };
 		98688E0C2B55837500638572 /* plungeeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98688E0B2B55837500638572 /* plungeeApp.swift */; };
 		98688E0E2B55837500638572 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98688E0D2B55837500638572 /* MainView.swift */; };
@@ -58,7 +58,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		98663DFE2BB6095800608098 /* TabbedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedView.swift; sourceTree = "<group>"; };
+		98404C452BBE88E5006C4700 /* WorkoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutManager.swift; sourceTree = "<group>"; };
 		98663E002BB6097D00608098 /* TabItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItems.swift; sourceTree = "<group>"; };
 		98688E082B55837500638572 /* plungee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = plungee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98688E0B2B55837500638572 /* plungeeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = plungeeApp.swift; sourceTree = "<group>"; };
@@ -134,7 +134,10 @@
 			isa = PBXGroup;
 			children = (
 				98688E0B2B55837500638572 /* plungeeApp.swift */,
+				98404C452BBE88E5006C4700 /* WorkoutManager.swift */,
 				98E0ED642BB6027C00AE977C /* Views */,
+				986538362BB6A7510091DA64 /* Utils */,
+				98B222242BB9C61B0086D842 /* Fonts */,
 				98688E0F2B55837700638572 /* Assets.xcassets */,
 				98688E112B55837700638572 /* Preview Content */,
 			);
@@ -180,6 +183,13 @@
 			path = Shared;
 			sourceTree = "<group>";
 		};
+		98B222242BB9C61B0086D842 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		98BCE8692BB95B4C006F454D /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,8 +210,6 @@
 				98E0ED6D2BB6035400AE977C /* StatsView.swift */,
 				98E0ED692BB6033A00AE977C /* SettingsView.swift */,
 				98E0ED6F2BB604A400AE977C /* SessionView.swift */,
-				98663DFE2BB6095800608098 /* TabbedView.swift */,
-				986538362BB6A7510091DA64 /* Utils */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -312,10 +320,10 @@
 				98688E0E2B55837500638572 /* MainView.swift in Sources */,
 				98688E302B55864500638572 /* ExposureType.swift in Sources */,
 				98E0ED702BB604A400AE977C /* SessionView.swift in Sources */,
-				98663DFF2BB6095800608098 /* TabbedView.swift in Sources */,
 				98E0ED6C2BB6034900AE977C /* HomeView.swift in Sources */,
 				98688E402B57BF2800638572 /* ElapsedTimeView.swift in Sources */,
 				98E0ED6E2BB6035400AE977C /* StatsView.swift in Sources */,
+				98404C462BBE88E5006C4700 /* WorkoutManager.swift in Sources */,
 				98663E012BB6097D00608098 /* TabItems.swift in Sources */,
 				98688E0C2B55837500638572 /* plungeeApp.swift in Sources */,
 			);

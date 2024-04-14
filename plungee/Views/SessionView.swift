@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct SessionView: View {
+    @EnvironmentObject var workoutManager: WorkoutManager
+    var selectedExposureType: ExposureType
+    
     var body: some View {
         VStack {
-            VStack {
+            VStack(alignment: .leading) {
                 ElapsedTimeView(
                     elapsedTime: 0,
                     showSubseconds: true
@@ -25,33 +28,47 @@ struct SessionView: View {
                     unit: UnitTemperature.celsius
                 ).formatted(.measurement(width: .abbreviated, usage: .person)))
             }
+            .frame(width: .infinity)
             
             Spacer()
             
             HStack(alignment: .bottom) {
-                Button(action: doNothing) {
+                Button(action: workoutManager.togglePause) {
                     HStack {
                         Image(systemName: "pause.fill")
                         Text("Pause")
+                            .bold()
                     }
                 }
-                .background(.green)
+                .padding()
+                .background(.orange)
+                .clipShape(RoundedRectangle(cornerRadius: 25.0))
                 
-                Button(action: doNothing) {
+                Spacer()
+                    .frame(maxWidth: 50)
+                
+                Button(action: workoutManager.end) {
                     Image(systemName: "flag.checkered")
                 }
+                .padding()
                 .background(.red)
+                .clipShape(Circle())
             }
+            .frame(height: 64)
+            .padding(.horizontal, 7)
+            .background(.black.opacity(0.6))
+            .foregroundStyle(.white)
+            .clipShape(RoundedRectangle(cornerRadius: 35, style: .circular))
+            .padding(.horizontal, 26)
             
         }
         .navigationBarBackButtonHidden()
+        //.navigationTitle(selectedExposureType.id)
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
-func doNothing() {
-    return
-}
-
 #Preview {
-    SessionView()
+    SessionView(selectedExposureType: .plunge)
+        .environmentObject(WorkoutManager())
 }

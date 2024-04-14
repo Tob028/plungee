@@ -8,33 +8,31 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State var presentedWorkout: [ExposureType] = []
+    @EnvironmentObject var workoutManager: WorkoutManager
     
     var body: some View {
-        NavigationStack(path: $presentedWorkout) {
+        VStack {
             VStack {
-                ForEach(exposureTypes) { workoutType in
-                    NavigationLink(workoutType.id, value: workoutType)
-                        .padding(EdgeInsets(top: 10, leading: 20, bottom: 10, trailing: 20))
-                        .font(.system(size: 26, weight: .medium, design: .default))
-                        .background(.gray)
-                        .foregroundColor(.white)
-                        .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
-                        .navigationDestination(for: ExposureType.self) { workoutType in
-                            SessionView()
-                                .toolbar(.hidden)
-                        }
-                        .onChange(of: presentedWorkout) {
-                            guard let workout = presentedWorkout.last else { return }
-                            //workoutManager.selectedWorkout = workout
-                        }
-                    
-                }
-                .navigationTitle("plungee")
-                .navigationBarTitleDisplayMode(.large)
-                .onAppear() {
-                    //workoutManager.requestAuthorisation()
-                }
+                Text("Start")
+                //Text("cold!")
+            }
+            .font(.system(size: 34, weight: .heavy, design: .default))
+            
+            ForEach(exposureTypes) { workoutType in
+                NavigationLink(workoutType.id, value: workoutType)
+                    .padding(EdgeInsets(top: 17, leading: 40, bottom: 17, trailing: 40))
+                    .font(.system(size: 26, weight: .medium, design: .default))
+                    .background(.black.opacity(0.8))
+                    .foregroundColor(.white)
+                    .clipShape(RoundedRectangle(cornerRadius: 35, style: .circular))
+                    .navigationDestination(for: ExposureType.self) { exposureType in
+                        SessionView(selectedExposureType: exposureType)
+                    }
+            }
+            .navigationTitle("plungee")
+            .navigationBarTitleDisplayMode(.large)
+            .onAppear() {
+                //workoutManager.requestAuthorisation()
             }
         }
     }
@@ -42,4 +40,5 @@ struct HomeView: View {
 
 #Preview {
     HomeView()
+        .environmentObject(WorkoutManager())
 }

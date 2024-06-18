@@ -105,7 +105,7 @@ class WorkoutManager: NSObject, ObservableObject {
     // MARK: - Workout Metrics
     @Published var averageHeartRate: Double = 0
     @Published var heartRate: Double = 0
-    @Published var workout: HKWorkout?
+    @Published var workout: Session?
     
     
     func updateForStatistics(_ statistics: HKStatistics?) {
@@ -137,16 +137,16 @@ class WorkoutManager: NSObject, ObservableObject {
 
 extension WorkoutManager: HKWorkoutSessionDelegate {
     func workoutSession(_ workoutSession: HKWorkoutSession, didChangeTo toState: HKWorkoutSessionState, from fromState: HKWorkoutSessionState, date: Date) {
-        print("state change")
         DispatchQueue.main.async {
             self.running = toState == .running
-            print("state change from async")
         }
         
         if toState == .ended {
             builder?.endCollection(withEnd: date) { (success, error) in
                 // Save session and send to iphone
-                extractWorkoutData(workoutBuilder: self.builder!)
+                DispatchQueue.main.async {
+                    self.workout = extractWorkoutData(workoutBuilder: self.builder!)
+                }
                 
                 // Discard workout, as it's not being saved to HealthKit
                 self.builder?.discardWorkout()
@@ -183,8 +183,7 @@ extension WorkoutManager: HKLiveWorkoutBuilderDelegate {
     }
 }
 
-func extractWorkoutData(workoutBuilder: HKWorkoutBuilder) {
-    print("extracting")
+func extractWorkoutData(workoutBuilder: HKWorkoutBuilder) -> Session {
     // Extract data from workout builder
     let statistics = workoutBuilder.allStatistics
     let samples = workoutBuilder.workoutEvents
@@ -203,4 +202,6 @@ func extractWorkoutData(workoutBuilder: HKWorkoutBuilder) {
     print("Total Distance: \(String(describing: totalDistance))")
     
     // process data
+    let session = Session(exposureType: .plunge, startDate: startDate!, endDate: endDate!)
+    return session
 }

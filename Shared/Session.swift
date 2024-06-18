@@ -12,8 +12,8 @@ class Session {
     
     var timeInterval: DateInterval
     
-    init() {
-        exposureType = ExposureType.plunge
-        timeInterval = DateInterval(start: Date(), end: Date())
+    init(exposureType: ExposureType, startDate: Date, endDate: Date) {
+        self.exposureType = exposureType
+        timeInterval = DateInterval(start: startDate, end: endDate)
     }
 }

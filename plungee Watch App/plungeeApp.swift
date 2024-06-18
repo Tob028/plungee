@@ -13,11 +13,7 @@ struct plungee_Watch_AppApp: App {
     
     var body: some Scene {
         WindowGroup {
-            TabView {
-                StartView()
-                Text("stats")
-            }
-            .environmentObject(workoutManager)
+            StartView().environmentObject(workoutManager)
         }
     }
 }

@@ -32,14 +32,16 @@ struct ControlsView: View {
                 }
             }
             
-            VStack {
-                Button(action: WKInterfaceDevice.current().enableWaterLock) {
-                    Image(systemName: "drop.fill")
+            HStack {
+                VStack {
+                    Button(action: WKInterfaceDevice.current().enableWaterLock) {
+                        Image(systemName: "drop.fill")
+                    }
+                    .tint(.cyan)
+                    .font(.title2)
+                    
+                    Text("Lock")
                 }
-                .tint(.cyan)
-                .font(.title2)
-                
-                Text("Lock")
             }
         }
     }

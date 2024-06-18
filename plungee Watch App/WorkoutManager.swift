@@ -60,7 +60,7 @@ class WorkoutManager: NSObject, ObservableObject {
     
     func requestAuthorisation() {
         let typesToShare: Set<HKSampleType> = [
-            HKQuantityType.workoutType()
+            //HKQuantityType.workoutType()
         ]
         
         let typesToRead: Set<HKObjectType> = [
@@ -137,17 +137,27 @@ class WorkoutManager: NSObject, ObservableObject {
 
 extension WorkoutManager: HKWorkoutSessionDelegate {
     func workoutSession(_ workoutSession: HKWorkoutSession, didChangeTo toState: HKWorkoutSessionState, from fromState: HKWorkoutSessionState, date: Date) {
+        print("state change")
         DispatchQueue.main.async {
             self.running = toState == .running
+            print("state change from async")
         }
         
         if toState == .ended {
             builder?.endCollection(withEnd: date) { (success, error) in
+                // Save session and send to iphone
+                extractWorkoutData(workoutBuilder: self.builder!)
+                
+                // Discard workout, as it's not being saved to HealthKit
+                self.builder?.discardWorkout()
+                
+                /*
                 self.builder?.finishWorkout { (workout, error) in
                     DispatchQueue.main.async {
                         self.workout = workout
                     }
                 }
+                */
             }
         }
     }
@@ -171,4 +181,26 @@ extension WorkoutManager: HKLiveWorkoutBuilderDelegate {
             updateForStatistics(statistics)
         }
     }
+}
+
+func extractWorkoutData(workoutBuilder: HKWorkoutBuilder) {
+    print("extracting")
+    // Extract data from workout builder
+    let statistics = workoutBuilder.allStatistics
+    let samples = workoutBuilder.workoutEvents
+    let workoutConfiguration = workoutBuilder.workoutConfiguration
+    let startDate = workoutBuilder.startDate
+    let endDate = workoutBuilder.endDate
+    let totalEnergyBurned = workoutBuilder.statistics(for: HKQuantityType.quantityType(forIdentifier: .activeEnergyBurned)!)
+    let totalDistance = workoutBuilder.statistics(for: HKQuantityType.quantityType(forIdentifier: .distanceWalkingRunning)!)
+    
+    // Print extracted data
+    print("Statistics \(statistics)")
+    print("Workout Configuration: \(workoutConfiguration)")
+    print("Start Date: \(String(describing: startDate))")
+    print("End Date: \(String(describing: endDate))")
+    print("Total Energy Burned: \(String(describing: totalEnergyBurned))")
+    print("Total Distance: \(String(describing: totalDistance))")
+    
+    // process data
 }

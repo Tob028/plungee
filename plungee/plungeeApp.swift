@@ -12,7 +12,6 @@ struct plungeeApp: App {
     var body: some Scene {
         WindowGroup {
             MainView()
-                .environmentObject(WorkoutManager())
         }
     }
 }

@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct MainView: View {
-    @EnvironmentObject var workoutManager: WorkoutManager
     @State var selectedTab = 0
     
     var body: some View {
@@ -77,5 +76,4 @@ extension MainView {
 
 #Preview {
     MainView()
-        .environmentObject(WorkoutManager())
 }

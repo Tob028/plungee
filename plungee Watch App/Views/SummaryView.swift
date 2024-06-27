@@ -25,7 +25,7 @@ struct SummaryView: View {
             ScrollView {
                 VStack(alignment: .leading) {
                     SummaryMetricView(title: "Total Time",
-                                      value: durationFormatter.string(from: workoutManager.workout?.timeInterval.duration ?? 0.0) ?? "")
+                                      value: durationFormatter.string(from: workoutManager.workout?.duration ?? 0.0) ?? "")
                         .foregroundStyle(.yellow)
                     SummaryMetricView(title: "Avg. Heart Rate",
                                       value: workoutManager.averageHeartRate.formatted(.number.precision(.fractionLength(0))) + " bpm")

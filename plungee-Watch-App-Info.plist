@@ -8,9 +8,5 @@
 	<array>
 		<string>workout-processing</string>
 	</array>
-	<key>NSHealthShareUsageDescription</key>
-	<string>Your workout data will be used to display your saved cold exposure logs in plungee.</string>
-	<key>NSHealthUpdateUsageDescription</key>
-	<string>Cold exposure tracked by plungee will be saved into HealthKit.</string>
 </dict>
 </plist>

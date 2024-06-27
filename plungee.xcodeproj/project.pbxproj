@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		980961292C240E5300C30891 /* WatchConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980961282C240E5300C30891 /* WatchConnector.swift */; };
+		9809612B2C240F3D00C30891 /* WatchiOSConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9809612A2C240F3D00C30891 /* WatchiOSConnector.swift */; };
 		982ECCC52C0E0227001BA77B /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982ECCC42C0E0227001BA77B /* Session.swift */; };
 		982ECCC62C0E0227001BA77B /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982ECCC42C0E0227001BA77B /* Session.swift */; };
 		98663E012BB6097D00608098 /* TabItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98663E002BB6097D00608098 /* TabItems.swift */; };
@@ -22,6 +24,16 @@
 		98688E312B55864500638572 /* ExposureType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98688E2F2B55864500638572 /* ExposureType.swift */; };
 		98688E3C2B569CE400638572 /* ElapsedTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98688E3A2B569CE400638572 /* ElapsedTimeView.swift */; };
 		98688E402B57BF2800638572 /* ElapsedTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98688E3A2B569CE400638572 /* ElapsedTimeView.swift */; };
+		9898759E2C2D962D00D771AB /* plungeeWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9898759D2C2D962D00D771AB /* plungeeWatchApp.swift */; };
+		989875A02C2D962D00D771AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9898759F2C2D962D00D771AB /* ContentView.swift */; };
+		989875A22C2D962F00D771AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 989875A12C2D962F00D771AB /* Assets.xcassets */; };
+		989875A52C2D962F00D771AB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 989875A42C2D962F00D771AB /* Preview Assets.xcassets */; };
+		989875A82C2D962F00D771AB /* plungeeWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 9898759B2C2D962D00D771AB /* plungeeWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		989875AC2C2D96AE00D771AB /* ExposureType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98688E2F2B55864500638572 /* ExposureType.swift */; };
+		989875AD2C2D96AE00D771AB /* ElapsedTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98688E3A2B569CE400638572 /* ElapsedTimeView.swift */; };
+		989875AE2C2D96AE00D771AB /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982ECCC42C0E0227001BA77B /* Session.swift */; };
+		989875B12C2D9D5600D771AB /* SessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989875B02C2D9D5500D771AB /* SessionView.swift */; };
+		989875B32C2D9E0600D771AB /* MetricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989875B22C2D9E0600D771AB /* MetricsView.swift */; };
 		98B2221D2BB961EA0086D842 /* SessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B2221C2BB961EA0086D842 /* SessionView.swift */; };
 		98B2221F2BB962CA0086D842 /* MetricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B2221E2BB962CA0086D842 /* MetricsView.swift */; };
 		98B222212BB962D60086D842 /* ControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B222202BB962D60086D842 /* ControlsView.swift */; };
@@ -41,6 +53,13 @@
 			remoteGlobalIDString = 98688E172B55837700638572;
 			remoteInfo = "plungee Watch App";
 		};
+		989875A62C2D962F00D771AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 98688E002B55837500638572 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9898759A2C2D962D00D771AB;
+			remoteInfo = "plungeeWatch Watch App";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -50,6 +69,7 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
+				989875A82C2D962F00D771AB /* plungeeWatch Watch App.app in Embed Watch Content */,
 				98688E192B55837700638572 /* plungee Watch App.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
@@ -58,6 +78,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		980961282C240E5300C30891 /* WatchConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnector.swift; sourceTree = "<group>"; };
+		9809612A2C240F3D00C30891 /* WatchiOSConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchiOSConnector.swift; sourceTree = "<group>"; };
 		982ECCC42C0E0227001BA77B /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		98663E002BB6097D00608098 /* TabItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItems.swift; sourceTree = "<group>"; };
 		98688E082B55837500638572 /* plungee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = plungee.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +93,13 @@
 		98688E242B55837900638572 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		98688E2F2B55864500638572 /* ExposureType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureType.swift; sourceTree = "<group>"; };
 		98688E3A2B569CE400638572 /* ElapsedTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElapsedTimeView.swift; sourceTree = "<group>"; };
+		9898759B2C2D962D00D771AB /* plungeeWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "plungeeWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9898759D2C2D962D00D771AB /* plungeeWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = plungeeWatchApp.swift; sourceTree = "<group>"; };
+		9898759F2C2D962D00D771AB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		989875A12C2D962F00D771AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		989875A42C2D962F00D771AB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		989875B02C2D9D5500D771AB /* SessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionView.swift; sourceTree = "<group>"; };
+		989875B22C2D9E0600D771AB /* MetricsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsView.swift; sourceTree = "<group>"; };
 		98B2221C2BB961EA0086D842 /* SessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionView.swift; sourceTree = "<group>"; };
 		98B2221E2BB962CA0086D842 /* MetricsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsView.swift; sourceTree = "<group>"; };
 		98B222202BB962D60086D842 /* ControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsView.swift; sourceTree = "<group>"; };
@@ -99,6 +128,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		989875982C2D962D00D771AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -116,6 +152,7 @@
 				98688E0A2B55837500638572 /* plungee */,
 				98688E1C2B55837700638572 /* plungee Watch App */,
 				98688E322B55864A00638572 /* Shared */,
+				9898759C2C2D962D00D771AB /* plungeeWatch Watch App */,
 				98688E092B55837500638572 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -125,6 +162,7 @@
 			children = (
 				98688E082B55837500638572 /* plungee.app */,
 				98688E182B55837700638572 /* plungee Watch App.app */,
+				9898759B2C2D962D00D771AB /* plungeeWatch Watch App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -137,6 +175,7 @@
 				986538362BB6A7510091DA64 /* Utils */,
 				98688E0F2B55837700638572 /* Assets.xcassets */,
 				98688E112B55837700638572 /* Preview Content */,
+				980961282C240E5300C30891 /* WatchConnector.swift */,
 			);
 			path = plungee;
 			sourceTree = "<group>";
@@ -159,6 +198,7 @@
 				98BCE8692BB95B4C006F454D /* Views */,
 				98688E212B55837900638572 /* Assets.xcassets */,
 				98688E232B55837900638572 /* Preview Content */,
+				9809612A2C240F3D00C30891 /* WatchiOSConnector.swift */,
 			);
 			path = "plungee Watch App";
 			sourceTree = "<group>";
@@ -179,6 +219,35 @@
 				982ECCC42C0E0227001BA77B /* Session.swift */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		9898759C2C2D962D00D771AB /* plungeeWatch Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				989875AF2C2D9D0B00D771AB /* Views */,
+				9898759D2C2D962D00D771AB /* plungeeWatchApp.swift */,
+				9898759F2C2D962D00D771AB /* ContentView.swift */,
+				989875A12C2D962F00D771AB /* Assets.xcassets */,
+				989875A32C2D962F00D771AB /* Preview Content */,
+			);
+			path = "plungeeWatch Watch App";
+			sourceTree = "<group>";
+		};
+		989875A32C2D962F00D771AB /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				989875A42C2D962F00D771AB /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		989875AF2C2D9D0B00D771AB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				989875B02C2D9D5500D771AB /* SessionView.swift */,
+				989875B22C2D9E0600D771AB /* MetricsView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		98BCE8692BB95B4C006F454D /* Views */ = {
@@ -220,6 +289,7 @@
 			);
 			dependencies = (
 				98688E1B2B55837700638572 /* PBXTargetDependency */,
+				989875A72C2D962F00D771AB /* PBXTargetDependency */,
 			);
 			name = plungee;
 			productName = plungee;
@@ -243,6 +313,23 @@
 			productReference = 98688E182B55837700638572 /* plungee Watch App.app */;
 			productType = "com.apple.product-type.application";
 		};
+		9898759A2C2D962D00D771AB /* plungeeWatch Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 989875AB2C2D962F00D771AB /* Build configuration list for PBXNativeTarget "plungeeWatch Watch App" */;
+			buildPhases = (
+				989875972C2D962D00D771AB /* Sources */,
+				989875982C2D962D00D771AB /* Frameworks */,
+				989875992C2D962D00D771AB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "plungeeWatch Watch App";
+			productName = "plungeeWatch Watch App";
+			productReference = 9898759B2C2D962D00D771AB /* plungeeWatch Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -250,7 +337,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1520;
+				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1530;
 				TargetAttributes = {
 					98688E072B55837500638572 = {
@@ -258,6 +345,9 @@
 					};
 					98688E172B55837700638572 = {
 						CreatedOnToolsVersion = 15.2;
+					};
+					9898759A2C2D962D00D771AB = {
+						CreatedOnToolsVersion = 15.4;
 					};
 				};
 			};
@@ -276,6 +366,7 @@
 			targets = (
 				98688E072B55837500638572 /* plungee */,
 				98688E172B55837700638572 /* plungee Watch App */,
+				9898759A2C2D962D00D771AB /* plungeeWatch Watch App */,
 			);
 		};
 /* End PBXProject section */
@@ -299,6 +390,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		989875992C2D962D00D771AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				989875A52C2D962F00D771AB /* Preview Assets.xcassets in Resources */,
+				989875A22C2D962F00D771AB /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -307,6 +407,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				98E0ED6A2BB6033A00AE977C /* SettingsView.swift in Sources */,
+				980961292C240E5300C30891 /* WatchConnector.swift in Sources */,
 				98688E0E2B55837500638572 /* MainView.swift in Sources */,
 				98688E302B55864500638572 /* ExposureType.swift in Sources */,
 				98E0ED6C2BB6034900AE977C /* HomeView.swift in Sources */,
@@ -331,7 +432,22 @@
 				98688E1E2B55837700638572 /* plungeeApp.swift in Sources */,
 				98D724112B605A07007A20AD /* WorkoutManager.swift in Sources */,
 				98688E3C2B569CE400638572 /* ElapsedTimeView.swift in Sources */,
+				9809612B2C240F3D00C30891 /* WatchiOSConnector.swift in Sources */,
 				98B222232BB9B4280086D842 /* SummaryView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		989875972C2D962D00D771AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				989875A02C2D962D00D771AB /* ContentView.swift in Sources */,
+				989875B32C2D9E0600D771AB /* MetricsView.swift in Sources */,
+				989875B12C2D9D5600D771AB /* SessionView.swift in Sources */,
+				9898759E2C2D962D00D771AB /* plungeeWatchApp.swift in Sources */,
+				989875AC2C2D96AE00D771AB /* ExposureType.swift in Sources */,
+				989875AD2C2D96AE00D771AB /* ElapsedTimeView.swift in Sources */,
+				989875AE2C2D96AE00D771AB /* Session.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +458,11 @@
 			isa = PBXTargetDependency;
 			target = 98688E172B55837700638572 /* plungee Watch App */;
 			targetProxy = 98688E1A2B55837700638572 /* PBXContainerItemProxy */;
+		};
+		989875A72C2D962F00D771AB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9898759A2C2D962D00D771AB /* plungeeWatch Watch App */;
+			targetProxy = 989875A62C2D962F00D771AB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -477,6 +598,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "plungee-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = plungee;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Your workout data will be used to display your saved cold exposure logs in plungee.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Cold exposure tracked by plungee will be saved into HealthKit.";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = dev.tobb.plungee;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -484,7 +607,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.tobb.plungee.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.tobb.plungee.watchapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -510,6 +633,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "plungee-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = plungee;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Your workout data will be used to display your saved cold exposure logs in plungee.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Cold exposure tracked by plungee will be saved into HealthKit.";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = dev.tobb.plungee;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -517,7 +642,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.tobb.plungee.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.tobb.plungee.watchapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -602,6 +727,67 @@
 			};
 			name = Release;
 		};
+		989875A92C2D962F00D771AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"plungeeWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = MV653MTS3Y;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = plungeeWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = dev.tobb.plungee;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.tobb.plungee.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.5;
+			};
+			name = Debug;
+		};
+		989875AA2C2D962F00D771AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"plungeeWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = MV653MTS3Y;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = plungeeWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = dev.tobb.plungee;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.tobb.plungee.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 10.5;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -628,6 +814,15 @@
 			buildConfigurations = (
 				98688E2D2B55837900638572 /* Debug */,
 				98688E2E2B55837900638572 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		989875AB2C2D962F00D771AB /* Build configuration list for PBXNativeTarget "plungeeWatch Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				989875A92C2D962F00D771AB /* Debug */,
+				989875AA2C2D962F00D771AB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -146,9 +146,13 @@ extension WorkoutManager: HKWorkoutSessionDelegate {
         }
         
         if toState == .ended {
+            print("builder ended")
             builder?.endCollection(withEnd: date) { (success, error) in
+                print("collection ended")
                 self.builder?.finishWorkout { (workout, error) in
+                    print("finishing")
                     DispatchQueue.main.async {
+                        print("Workout is \(workout)")
                         self.workout = workout
                         print("Workout ended successfully")
                     }

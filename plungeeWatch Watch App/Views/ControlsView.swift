@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WatchKit
 
 struct ControlsView: View {
     @EnvironmentObject var workoutManager: WorkoutManager

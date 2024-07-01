@@ -35,9 +35,8 @@ class WorkoutManager: NSObject, ObservableObject {
         do {
             session = try HKWorkoutSession(healthStore: healthStore, configuration: configuration)
             builder = session?.associatedWorkoutBuilder()
-            print("Session and builder created successfully")
         } catch {
-            print("Failed to create session and builder: \(error.localizedDescription)")
+            print("Failed to create session or builder: \(error.localizedDescription)")
             return
         }
         
@@ -52,15 +51,14 @@ class WorkoutManager: NSObject, ObservableObject {
             if success {
                 print("Workout collection started successfully")
             } else {
-                print("Failed to start collection: \(error?.localizedDescription ?? "unknown error")")
+                print("Failed to start collection: \(error?.localizedDescription)")
             }
         }
     }
-
     
     func requestAuthorisation() {
         let typesToShare: Set<HKSampleType> = [
-            HKQuantityType.workoutType()
+            //HKQuantityType.workoutType()
         ]
         
         let typesToRead: Set<HKObjectType> = [
@@ -68,22 +66,17 @@ class WorkoutManager: NSObject, ObservableObject {
             HKQuantityType.quantityType(forIdentifier: .waterTemperature)!,
             HKQuantityType.quantityType(forIdentifier: .bodyTemperature)!,
             HKQuantityType.quantityType(forIdentifier: .respiratoryRate)!,
-            HKQuantityType.quantityType(forIdentifier: .oxygenSaturation)!
+            HKQuantityType.quantityType(forIdentifier: .oxygenSaturation)!,
         ]
         
         healthStore.requestAuthorization(toShare: typesToShare, read: typesToRead) { (success, error) in
             if success {
                 print("HealthKit authorization granted")
             } else {
-                if let error = error {
-                    print("HealthKit authorization failed: \(error.localizedDescription)")
-                } else {
-                    print("HealthKit authorization failed: unknown error")
-                }
+                print(error!.localizedDescription)
             }
         }
     }
-
     
     // MARK: - State Control
     
@@ -98,8 +91,9 @@ class WorkoutManager: NSObject, ObservableObject {
     }
     
     func togglePause() {
+        print("Workout is running? \(running)")
         if running {
-            self.pause()
+            pause()
         } else {
             resume()
         }
@@ -108,6 +102,7 @@ class WorkoutManager: NSObject, ObservableObject {
     func end() {
         session?.end()
         showingSummaryView = true
+        navigationPath = []
         print("Workout ended")
     }
     
@@ -125,6 +120,7 @@ class WorkoutManager: NSObject, ObservableObject {
                 let heartRateUnit = HKUnit.count().unitDivided(by: .minute())
                 self.heartRate = statistics.mostRecentQuantity()?.doubleValue(for: heartRateUnit) ?? 0
                 self.averageHeartRate = statistics.averageQuantity()?.doubleValue(for: heartRateUnit) ?? 0
+                print("Heart rate updated: \(self.heartRate), Average: \(self.averageHeartRate)")
             default:
                 return
             }
@@ -137,6 +133,7 @@ class WorkoutManager: NSObject, ObservableObject {
         session = nil
         averageHeartRate = 0
         heartRate = 0
+        running = false
     }
 }
 
@@ -150,16 +147,11 @@ extension WorkoutManager: HKWorkoutSessionDelegate {
         
         if toState == .ended {
             builder?.endCollection(withEnd: date) { (success, error) in
-                if success {
-                    print("Workout collection ended successfully")
-                    self.builder?.finishWorkout { (workout, error) in
-                        DispatchQueue.main.async {
-                            self.workout = workout
-                            print("Workout finished")
-                        }
+                self.builder?.finishWorkout { (workout, error) in
+                    DispatchQueue.main.async {
+                        self.workout = workout
+                        print("Workout ended successfully")
                     }
-                } else {
-                    print("Failed to end collection: \(error?.localizedDescription ?? "unknown error")")
                 }
             }
         }
@@ -182,6 +174,7 @@ extension WorkoutManager: HKLiveWorkoutBuilderDelegate {
             }
             
             let statistics = workoutBuilder.statistics(for: quantityType)
+            print("Collected data for type: \(quantityType)")
             updateForStatistics(statistics)
         }
     }

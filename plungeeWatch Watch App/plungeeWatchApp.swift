@@ -13,11 +13,7 @@ struct plungeeWatch_Watch_AppApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .sheet(isPresented: $workoutManager.showingSummaryView) {
-                    SummaryView()
-                }
-                .environmentObject(workoutManager)
+            ContentView().environmentObject(workoutManager)
         }
     }
 }

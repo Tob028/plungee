@@ -27,7 +27,7 @@
 		98814BEB2C31D67B00FAAAEC /* ControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98814BEA2C31D67B00FAAAEC /* ControlsView.swift */; };
 		98814BED2C31EA4D00FAAAEC /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98814BEC2C31EA4D00FAAAEC /* WorkoutManager.swift */; };
 		98814BF12C327E6300FAAAEC /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98814BF02C327E6300FAAAEC /* HealthKit.framework */; };
-		98814BF52C328AE200FAAAEC /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98814BF42C328AE200FAAAEC /* SummaryView.swift */; };
+		98814BF72C32900800FAAAEC /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98814BF62C32900800FAAAEC /* SummaryView.swift */; };
 		9898759E2C2D962D00D771AB /* plungeeWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9898759D2C2D962D00D771AB /* plungeeWatchApp.swift */; };
 		989875A02C2D962D00D771AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9898759F2C2D962D00D771AB /* ContentView.swift */; };
 		989875A22C2D962F00D771AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 989875A12C2D962F00D771AB /* Assets.xcassets */; };
@@ -102,7 +102,7 @@
 		98814BF02C327E6300FAAAEC /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS10.5.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		98814BF22C327E9B00FAAAEC /* plungeeWatch Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "plungeeWatch Watch App.entitlements"; sourceTree = "<group>"; };
 		98814BF32C327EAF00FAAAEC /* plungeeWatch-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "plungeeWatch-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
-		98814BF42C328AE200FAAAEC /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
+		98814BF62C32900800FAAAEC /* SummaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SummaryView.swift; path = ../../../../.Trash/SummaryView.swift; sourceTree = "<group>"; };
 		9898759B2C2D962D00D771AB /* plungee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = plungee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9898759D2C2D962D00D771AB /* plungeeWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = plungeeWatchApp.swift; sourceTree = "<group>"; };
 		9898759F2C2D962D00D771AB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -162,8 +162,8 @@
 			children = (
 				98688E0A2B55837500638572 /* plungee */,
 				98688E1C2B55837700638572 /* plungee Watch App */,
-				98688E322B55864A00638572 /* Shared */,
 				9898759C2C2D962D00D771AB /* plungeeWatch Watch App */,
+				98688E322B55864A00638572 /* Shared */,
 				98688E092B55837500638572 /* Products */,
 				98814BEF2C327E6200FAAAEC /* Frameworks */,
 			);
@@ -278,7 +278,7 @@
 				989875B02C2D9D5500D771AB /* SessionView.swift */,
 				989875B22C2D9E0600D771AB /* MetricsView.swift */,
 				98814BEA2C31D67B00FAAAEC /* ControlsView.swift */,
-				98814BF42C328AE200FAAAEC /* SummaryView.swift */,
+				98814BF62C32900800FAAAEC /* SummaryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -481,7 +481,7 @@
 				9898759E2C2D962D00D771AB /* plungeeWatchApp.swift in Sources */,
 				98814BEB2C31D67B00FAAAEC /* ControlsView.swift in Sources */,
 				989875AC2C2D96AE00D771AB /* ExposureType.swift in Sources */,
-				98814BF52C328AE200FAAAEC /* SummaryView.swift in Sources */,
+				98814BF72C32900800FAAAEC /* SummaryView.swift in Sources */,
 				989875AD2C2D96AE00D771AB /* ElapsedTimeView.swift in Sources */,
 				989875AE2C2D96AE00D771AB /* Session.swift in Sources */,
 			);

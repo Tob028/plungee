@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct SessionView: View {
+    @EnvironmentObject var workoutManager: WorkoutManager
+    @Environment(\.isLuminanceReduced) var isLuminanceReduced
     @State private var selection: Tab = .metrics
+    
+    var selectedExposureType: ExposureType
     
     enum Tab {
         case controls, metrics
@@ -16,12 +20,31 @@ struct SessionView: View {
     
     var body: some View {
         TabView(selection: $selection) {
-            Text("controls").tag(Tab.controls)
+            ControlsView().tag(Tab.controls)
             MetricsView().tag(Tab.metrics)
         }
+        .navigationBarBackButtonHidden()
+        .toolbar(.hidden)
+        .onChange(of: workoutManager.running) {
+            displayMetricsView()
+        }
+        .tabViewStyle(PageTabViewStyle(indexDisplayMode: isLuminanceReduced ? .never : .automatic))
+        .onChange(of: isLuminanceReduced) {
+            displayMetricsView()
+        }
+        .onAppear(perform: {
+            workoutManager.startWorkout(selectedExposure: selectedExposureType)
+        })
     }
+    
+    private func displayMetricsView() {
+        withAnimation {
+            selection = .metrics
+        }
+    }
+
 }
 
 #Preview {
-    SessionView()
+    SessionView(selectedExposureType: .plunge).environmentObject(WorkoutManager())
 }

@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct MetricsView: View {
+    @EnvironmentObject var workoutManager: WorkoutManager
     var body: some View {
         TimelineView(
-            MetricsTimelineSchedule(from: /* workoutManager.builder?.startDate ?? */ Date())
+            MetricsTimelineSchedule(from: workoutManager.builder?.startDate ?? Date())
         ) { context in
             VStack(alignment: .leading) {
                 ElapsedTimeView(
-                    elapsedTime: 0,
+                    elapsedTime: workoutManager.builder?.elapsedTime(at: context.date) ?? 0,
                     showSubseconds: context.cadence == .live
                 )
                 .foregroundStyle(.yellow)
@@ -32,7 +33,7 @@ struct MetricsView: View {
                  ).formatted(.measurement(width: .abbreviated, usage: .workout)))
                  */
                 
-                Text(123.formatted(.number.precision(.fractionLength(0))) + "bpm")
+                Text(workoutManager.heartRate.formatted(.number.precision(.fractionLength(0))) + "bpm")
             }
             .font(.system(.title, design: .rounded).monospacedDigit().lowercaseSmallCaps())
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -44,7 +45,7 @@ struct MetricsView: View {
 }
 
 #Preview {
-    MetricsView()
+    MetricsView().environmentObject(WorkoutManager())
 }
 
 private struct MetricsTimelineSchedule: TimelineSchedule {

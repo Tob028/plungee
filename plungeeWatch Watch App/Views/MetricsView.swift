@@ -45,7 +45,7 @@ struct MetricsView: View {
 }
 
 #Preview {
-    MetricsView().environmentObject(WorkoutManager())
+    MetricsView().environmentObject(WorkoutManager(connector: WatchIOSConnector()))
 }
 
 private struct MetricsTimelineSchedule: TimelineSchedule {

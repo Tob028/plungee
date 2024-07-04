@@ -1,9 +1,10 @@
 //
 //  SummaryView.swift
-//  plungee Watch App
+//  plungeeWatch Watch App
 //
-//  Created by Tobias on 31/03/2024.
+//  Created by Tobias on 04/07/2024.
 //
+
 
 import SwiftUI
 
@@ -46,7 +47,7 @@ struct SummaryView: View {
 }
 
 #Preview {
-    SummaryView().environmentObject(WorkoutManager())
+    SummaryView().environmentObject(WorkoutManager(connector: WatchIOSConnector()))
 }
 
 struct SummaryMetricView: View {

@@ -46,5 +46,5 @@ struct SessionView: View {
 }
 
 #Preview {
-    SessionView(selectedExposureType: .plunge).environmentObject(WorkoutManager())
+    SessionView(selectedExposureType: .plunge).environmentObject(WorkoutManager(connector: WatchIOSConnector()))
 }

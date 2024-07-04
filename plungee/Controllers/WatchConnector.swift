@@ -12,7 +12,7 @@ class WatchConnector: NSObject, WCSessionDelegate, ObservableObject {
     
     var session: WCSession
     
-    init(session: WCSession) {
+    init(session: WCSession = .default) {
         self.session = session
         super.init()
         session.delegate = self
@@ -20,6 +20,9 @@ class WatchConnector: NSObject, WCSessionDelegate, ObservableObject {
     }
     
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: (any Error)?) {
+        if (error != nil) {
+            print(error?.localizedDescription ?? "")
+        }
     }
     
     func sessionDidBecomeInactive(_ session: WCSession) {
@@ -29,5 +32,6 @@ class WatchConnector: NSObject, WCSessionDelegate, ObservableObject {
     }
     
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+        print(message)
     }
 }

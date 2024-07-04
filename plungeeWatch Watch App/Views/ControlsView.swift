@@ -49,5 +49,5 @@ struct ControlsView: View {
 }
 
 #Preview {
-    ControlsView().environmentObject(WorkoutManager())
+    ControlsView().environmentObject(WorkoutManager(connector: WatchIOSConnector()))
 }

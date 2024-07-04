@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  plungeeWatch Watch App
 //
-//  Created by Tobias on 27/06/2024.
+//  Created by Tobias on 04/07/2024.
 //
 
 import SwiftUI
@@ -21,6 +21,7 @@ struct ContentView: View {
             .listStyle(.carousel)
             .navigationTitle("plungee")
             .navigationBarTitleDisplayMode(.large)
+            .toolbar(.visible)
             .onAppear() {
                 workoutManager.requestAuthorisation()
             }
@@ -29,5 +30,6 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView().environmentObject(WorkoutManager())
+    ContentView().environmentObject(WorkoutManager(connector: WatchIOSConnector()))
 }
+

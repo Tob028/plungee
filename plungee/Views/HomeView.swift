@@ -11,39 +11,14 @@ struct HomeView: View {
     
     var body: some View {
         VStack {
-            Text("Your Summary")
+            Text("Hello, [name]")
+                .font(.largeTitle)
             
-            HStack {
-                VStack(alignment: .leading) {
-                    Text("Time spent plunging")
-                    Text("28 min").bold()
-                }
-                .padding()
-                .background(.yellow)
-                
-                VStack(alignment: .leading) {
-                    Text("Time spent plunging")
-                    Text("28 min").bold()
-                }
-                .padding()
-                .background(.yellow)
+            VStack(alignment: .leading) {
+                Text("Time spent plunging")
+                Text("28 min").bold()
             }
-            
-            HStack {
-                VStack(alignment: .leading) {
-                    Text("Time spent plunging")
-                    Text("28 min").bold()
-                }
-                .padding()
-                .background(.yellow)
-                
-                VStack(alignment: .leading) {
-                    Text("Time spent plunging")
-                    Text("28 min").bold()
-                }
-                .padding()
-                .background(.yellow)
-            }
+            .padding()
         }
     }
 }

@@ -9,7 +9,14 @@ import SwiftUI
 
 @main
 struct plungeeWatch_Watch_AppApp: App {
-    @StateObject private var workoutManager = WorkoutManager()
+    private var watchConnector: WatchIOSConnector
+    @StateObject private var workoutManager: WorkoutManager
+    
+    init() {
+        let connector = WatchIOSConnector()
+        self.watchConnector = connector
+        self._workoutManager = StateObject(wrappedValue: WorkoutManager(connector: connector))
+    }
     
     var body: some Scene {
         WindowGroup {

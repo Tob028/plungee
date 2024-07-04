@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct plungeeApp: App {
+    @StateObject private var watchConnector = WatchConnector()
+    
     var body: some Scene {
         WindowGroup {
-            MainView()
+            MainView().environmentObject(watchConnector)
         }
     }
 }

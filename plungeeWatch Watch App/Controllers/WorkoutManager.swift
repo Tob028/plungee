@@ -19,6 +19,12 @@ class WorkoutManager: NSObject, ObservableObject {
     
     @Published var navigationPath: [ExposureType] = []
     
+    var watchConnector: WatchIOSConnector
+    
+    init(connector: WatchIOSConnector) {
+        self.watchConnector = connector
+    }
+    
     var workoutType: ExposureType = .plunge
     
     let healthStore = HKHealthStore()
@@ -48,10 +54,9 @@ class WorkoutManager: NSObject, ObservableObject {
         let startDate = Date()
         session?.startActivity(with: startDate)
         builder?.beginCollection(withStart: startDate) { (success, error) in
-            if success {
-                print("Workout collection started successfully")
-            } else {
-                print("Failed to start collection: \(error?.localizedDescription)")
+            guard success else {
+                print("Failed to start collection: \(String(describing: error?.localizedDescription))")
+                return
             }
         }
     }
@@ -70,10 +75,9 @@ class WorkoutManager: NSObject, ObservableObject {
         ]
         
         healthStore.requestAuthorization(toShare: typesToShare, read: typesToRead) { (success, error) in
-            if success {
-                print("HealthKit authorization granted")
-            } else {
+            guard success else {
                 print(error!.localizedDescription)
+                return
             }
         }
     }
@@ -91,7 +95,6 @@ class WorkoutManager: NSObject, ObservableObject {
     }
     
     func togglePause() {
-        print("Workout is running? \(running)")
         if running {
             pause()
         } else {
@@ -103,7 +106,6 @@ class WorkoutManager: NSObject, ObservableObject {
         session?.end()
         showingSummaryView = true
         navigationPath = []
-        print("Workout ended")
     }
     
     // MARK: - Workout Metrics
@@ -120,7 +122,6 @@ class WorkoutManager: NSObject, ObservableObject {
                 let heartRateUnit = HKUnit.count().unitDivided(by: .minute())
                 self.heartRate = statistics.mostRecentQuantity()?.doubleValue(for: heartRateUnit) ?? 0
                 self.averageHeartRate = statistics.averageQuantity()?.doubleValue(for: heartRateUnit) ?? 0
-                print("Heart rate updated: \(self.heartRate), Average: \(self.averageHeartRate)")
             default:
                 return
             }
@@ -142,19 +143,14 @@ extension WorkoutManager: HKWorkoutSessionDelegate {
     func workoutSession(_ workoutSession: HKWorkoutSession, didChangeTo toState: HKWorkoutSessionState, from fromState: HKWorkoutSessionState, date: Date) {
         DispatchQueue.main.async {
             self.running = toState == .running
-            print("Workout session state changed to \(toState.rawValue) from \(fromState.rawValue)")
         }
         
         if toState == .ended {
-            print("builder ended")
             builder?.endCollection(withEnd: date) { (success, error) in
-                print("collection ended")
                 self.builder?.finishWorkout { (workout, error) in
-                    print("finishing")
                     DispatchQueue.main.async {
-                        print("Workout is \(workout)")
                         self.workout = workout
-                        print("Workout ended successfully")
+                        self.watchConnector.sendSessionToIOS(workout: self.workout ?? nil)
                     }
                 }
             }
@@ -168,7 +164,6 @@ extension WorkoutManager: HKWorkoutSessionDelegate {
 
 extension WorkoutManager: HKLiveWorkoutBuilderDelegate {
     func workoutBuilderDidCollectEvent(_ workoutBuilder: HKLiveWorkoutBuilder) {
-        print("Workout builder did collect event")
     }
     
     func workoutBuilder(_ workoutBuilder: HKLiveWorkoutBuilder, didCollectDataOf collectedTypes: Set<HKSampleType>) {
@@ -178,7 +173,6 @@ extension WorkoutManager: HKLiveWorkoutBuilderDelegate {
             }
             
             let statistics = workoutBuilder.statistics(for: quantityType)
-            print("Collected data for type: \(quantityType)")
             updateForStatistics(statistics)
         }
     }

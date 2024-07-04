@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
+    @StateObject var watchConnector = WatchConnector()
     @State var selectedTab = 0
     
     var body: some View {
@@ -65,7 +66,7 @@ extension MainView {
             
             Spacer()
         }
-        .frame(width: isActive ? .infinity : 60, height: 60)
+        .frame(width: isActive ? .infinity : 100, height: 60)
         .foregroundStyle(.white)
         .background(isActive ? .black.opacity(0.6) : .clear)
         .clipShape(RoundedRectangle(cornerRadius: 30, style: .circular))

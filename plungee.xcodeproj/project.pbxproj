@@ -37,6 +37,7 @@
 		98C491632C37077200F21C32 /* ElapsedTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C4915E2C36FF1700F21C32 /* ElapsedTimeView.swift */; };
 		98C491642C37077400F21C32 /* ExposureType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C4915D2C36FF1700F21C32 /* ExposureType.swift */; };
 		98C491652C37077800F21C32 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C4915F2C36FF1700F21C32 /* Session.swift */; };
+		98DF67512C370E7900428188 /* WatchReachableIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DF67502C370E7900428188 /* WatchReachableIndicator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,7 @@
 		98C4915D2C36FF1700F21C32 /* ExposureType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExposureType.swift; path = ../../../.Trash/ExposureType.swift; sourceTree = "<group>"; };
 		98C4915E2C36FF1700F21C32 /* ElapsedTimeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ElapsedTimeView.swift; path = ../../../.Trash/ElapsedTimeView.swift; sourceTree = "<group>"; };
 		98C4915F2C36FF1700F21C32 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Session.swift; path = ../../../.Trash/Session.swift; sourceTree = "<group>"; };
+		98DF67502C370E7900428188 /* WatchReachableIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchReachableIndicator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +247,7 @@
 				98C491582C36FEFC00F21C32 /* MainView.swift */,
 				98C491562C36FEFC00F21C32 /* SettingsView.swift */,
 				98C491572C36FEFC00F21C32 /* StatsView.swift */,
+				98DF67502C370E7900428188 /* WatchReachableIndicator.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				98C4915A2C36FEFC00F21C32 /* SettingsView.swift in Sources */,
 				98663E012BB6097D00608098 /* TabItems.swift in Sources */,
 				98688E0C2B55837500638572 /* plungeeApp.swift in Sources */,
+				98DF67512C370E7900428188 /* WatchReachableIndicator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,7 +616,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 10.5;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = Debug;
 		};
@@ -646,7 +650,7 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 10.5;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = Release;
 		};

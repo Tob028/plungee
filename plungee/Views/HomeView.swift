@@ -19,10 +19,12 @@ struct HomeView: View {
                 Text("28 min").bold()
             }
             .padding()
+            
+            WatchReachableIndicator()
         }
     }
 }
 
 #Preview {
-    HomeView()
+    HomeView().environmentObject(WatchConnector())
 }

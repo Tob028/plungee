@@ -31,12 +31,15 @@
 		98C4915A2C36FEFC00F21C32 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C491562C36FEFC00F21C32 /* SettingsView.swift */; };
 		98C4915B2C36FEFC00F21C32 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C491572C36FEFC00F21C32 /* StatsView.swift */; };
 		98C4915C2C36FEFC00F21C32 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C491582C36FEFC00F21C32 /* MainView.swift */; };
-		98C491602C36FF1700F21C32 /* ExposureType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C4915D2C36FF1700F21C32 /* ExposureType.swift */; };
-		98C491612C36FF1700F21C32 /* ElapsedTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C4915E2C36FF1700F21C32 /* ElapsedTimeView.swift */; };
-		98C491622C36FF1700F21C32 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C4915F2C36FF1700F21C32 /* Session.swift */; };
-		98C491632C37077200F21C32 /* ElapsedTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C4915E2C36FF1700F21C32 /* ElapsedTimeView.swift */; };
-		98C491642C37077400F21C32 /* ExposureType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C4915D2C36FF1700F21C32 /* ExposureType.swift */; };
-		98C491652C37077800F21C32 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C4915F2C36FF1700F21C32 /* Session.swift */; };
+		98D7B68E2C391E130033300A /* ElapsedTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D7B68C2C387F200033300A /* ElapsedTimeView.swift */; };
+		98D7B68F2C391E130033300A /* ExposureType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D7B68D2C387F200033300A /* ExposureType.swift */; };
+		98D7B6902C391E140033300A /* ElapsedTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D7B68C2C387F200033300A /* ElapsedTimeView.swift */; };
+		98D7B6912C391E140033300A /* ExposureType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D7B68D2C387F200033300A /* ExposureType.swift */; };
+		98D7B6922C391E1B0033300A /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D7B68B2C387F190033300A /* Session.swift */; };
+		98D7B6932C391E1B0033300A /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D7B68B2C387F190033300A /* Session.swift */; };
+		98D7B6962C3965810033300A /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 98D7B6952C3965810033300A /* FirebaseAnalytics */; };
+		98D7B6982C3965810033300A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 98D7B6972C3965810033300A /* FirebaseAuth */; };
+		98D7B69A2C3965810033300A /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 98D7B6992C3965810033300A /* FirebaseFirestore */; };
 		98DF67512C370E7900428188 /* WatchReachableIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DF67502C370E7900428188 /* WatchReachableIndicator.swift */; };
 /* End PBXBuildFile section */
 
@@ -92,9 +95,9 @@
 		98C491562C36FEFC00F21C32 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		98C491572C36FEFC00F21C32 /* StatsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 		98C491582C36FEFC00F21C32 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		98C4915D2C36FF1700F21C32 /* ExposureType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExposureType.swift; path = ../../../.Trash/ExposureType.swift; sourceTree = "<group>"; };
-		98C4915E2C36FF1700F21C32 /* ElapsedTimeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ElapsedTimeView.swift; path = ../../../.Trash/ElapsedTimeView.swift; sourceTree = "<group>"; };
-		98C4915F2C36FF1700F21C32 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Session.swift; path = ../../../.Trash/Session.swift; sourceTree = "<group>"; };
+		98D7B68B2C387F190033300A /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		98D7B68C2C387F200033300A /* ElapsedTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElapsedTimeView.swift; sourceTree = "<group>"; };
+		98D7B68D2C387F200033300A /* ExposureType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureType.swift; sourceTree = "<group>"; };
 		98DF67502C370E7900428188 /* WatchReachableIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchReachableIndicator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,6 +106,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98D7B6962C3965810033300A /* FirebaseAnalytics in Frameworks */,
+				98D7B69A2C3965810033300A /* FirebaseFirestore in Frameworks */,
+				98D7B6982C3965810033300A /* FirebaseAuth in Frameworks */,
 				980339DD2C342AFA00D223F2 /* WatchConnectivity.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -172,9 +178,8 @@
 		98688E322B55864A00638572 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				98C4915E2C36FF1700F21C32 /* ElapsedTimeView.swift */,
-				98C4915D2C36FF1700F21C32 /* ExposureType.swift */,
-				98C4915F2C36FF1700F21C32 /* Session.swift */,
+				98D7B6892C387F0E0033300A /* Models */,
+				98D7B68A2C387F140033300A /* Utils */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -201,12 +206,12 @@
 		9898759C2C2D962D00D771AB /* plungeeWatch Watch App */ = {
 			isa = PBXGroup;
 			children = (
-				98814BF32C327EAF00FAAAEC /* plungeeWatch-Watch-App-Info.plist */,
-				98814BF22C327E9B00FAAAEC /* plungeeWatch Watch App.entitlements */,
 				9898759D2C2D962D00D771AB /* plungeeWatchApp.swift */,
 				98814BEE2C31EA5800FAAAEC /* Controllers */,
 				989875AF2C2D9D0B00D771AB /* Views */,
 				989875A12C2D962F00D771AB /* Assets.xcassets */,
+				98814BF22C327E9B00FAAAEC /* plungeeWatch Watch App.entitlements */,
+				98814BF32C327EAF00FAAAEC /* plungeeWatch-Watch-App-Info.plist */,
 				989875A32C2D962F00D771AB /* Preview Content */,
 			);
 			path = "plungeeWatch Watch App";
@@ -240,11 +245,28 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		98D7B6892C387F0E0033300A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				98D7B68B2C387F190033300A /* Session.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		98D7B68A2C387F140033300A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				98D7B68C2C387F200033300A /* ElapsedTimeView.swift */,
+				98D7B68D2C387F200033300A /* ExposureType.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		98E0ED642BB6027C00AE977C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				98C491552C36FEFC00F21C32 /* HomeView.swift */,
 				98C491582C36FEFC00F21C32 /* MainView.swift */,
+				98C491552C36FEFC00F21C32 /* HomeView.swift */,
 				98C491562C36FEFC00F21C32 /* SettingsView.swift */,
 				98C491572C36FEFC00F21C32 /* StatsView.swift */,
 				98DF67502C370E7900428188 /* WatchReachableIndicator.swift */,
@@ -270,6 +292,11 @@
 				989875A72C2D962F00D771AB /* PBXTargetDependency */,
 			);
 			name = plungee;
+			packageProductDependencies = (
+				98D7B6952C3965810033300A /* FirebaseAnalytics */,
+				98D7B6972C3965810033300A /* FirebaseAuth */,
+				98D7B6992C3965810033300A /* FirebaseFirestore */,
+			);
 			productName = plungee;
 			productReference = 98688E082B55837500638572 /* plungee.app */;
 			productType = "com.apple.product-type.application";
@@ -318,6 +345,9 @@
 				Base,
 			);
 			mainGroup = 98688DFF2B55837500638572;
+			packageReferences = (
+				98D7B6942C3965810033300A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 98688E092B55837500638572 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -356,13 +386,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				98C4915C2C36FEFC00F21C32 /* MainView.swift in Sources */,
-				98C491602C36FF1700F21C32 /* ExposureType.swift in Sources */,
 				980961292C240E5300C30891 /* WatchConnector.swift in Sources */,
-				98C491612C36FF1700F21C32 /* ElapsedTimeView.swift in Sources */,
+				98D7B68E2C391E130033300A /* ElapsedTimeView.swift in Sources */,
+				98D7B68F2C391E130033300A /* ExposureType.swift in Sources */,
 				98C491592C36FEFC00F21C32 /* HomeView.swift in Sources */,
-				98C491622C36FF1700F21C32 /* Session.swift in Sources */,
 				98C4915B2C36FEFC00F21C32 /* StatsView.swift in Sources */,
 				98C4915A2C36FEFC00F21C32 /* SettingsView.swift in Sources */,
+				98D7B6922C391E1B0033300A /* Session.swift in Sources */,
 				98663E012BB6097D00608098 /* TabItems.swift in Sources */,
 				98688E0C2B55837500638572 /* plungeeApp.swift in Sources */,
 				98DF67512C370E7900428188 /* WatchReachableIndicator.swift in Sources */,
@@ -375,14 +405,14 @@
 			files = (
 				989875A02C2D962D00D771AB /* ContentView.swift in Sources */,
 				989875B32C2D9E0600D771AB /* MetricsView.swift in Sources */,
-				98C491642C37077400F21C32 /* ExposureType.swift in Sources */,
+				98D7B6902C391E140033300A /* ElapsedTimeView.swift in Sources */,
+				98D7B6912C391E140033300A /* ExposureType.swift in Sources */,
 				98814BED2C31EA4D00FAAAEC /* WorkoutManager.swift in Sources */,
 				989875B12C2D9D5600D771AB /* SessionView.swift in Sources */,
 				9898759E2C2D962D00D771AB /* plungeeWatchApp.swift in Sources */,
+				98D7B6932C391E1B0033300A /* Session.swift in Sources */,
 				983226582C36EE49002DE360 /* SummaryView.swift in Sources */,
-				98C491652C37077800F21C32 /* Session.swift in Sources */,
 				98814BEB2C31D67B00FAAAEC /* ControlsView.swift in Sources */,
-				98C491632C37077200F21C32 /* ElapsedTimeView.swift in Sources */,
 				98BAB3B72C33E20F00AE0637 /* WatchIOSConnector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -685,6 +715,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		98D7B6942C3965810033300A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.28.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		98D7B6952C3965810033300A /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 98D7B6942C3965810033300A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		98D7B6972C3965810033300A /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 98D7B6942C3965810033300A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		98D7B6992C3965810033300A /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 98D7B6942C3965810033300A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 98688E002B55837500638572 /* Project object */;
 }

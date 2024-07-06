@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct MainView: View {
-    @StateObject var watchConnector = WatchConnector()
     @State var selectedTab = 0
     
     var body: some View {

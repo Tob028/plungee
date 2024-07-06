@@ -28,7 +28,7 @@ class WatchIOSConnector: NSObject, WCSessionDelegate, ObservableObject {
     
     func sendSessionToIOS(workout: HKWorkout?) {
         if (session.isReachable) {
-            let data: [String: Any] = ["workout": workout as Any]
+            let data: [String: Any] = ["duration": workout?.duration ?? 0]
             session.sendMessage(data, replyHandler: nil)
         } else {
             print("session is not reachable")

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
+    //@StateObject var watchConnector = WatchConnector()
     
     var body: some View {
         VStack {

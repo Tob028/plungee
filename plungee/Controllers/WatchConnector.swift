@@ -18,7 +18,6 @@ class WatchConnector: NSObject, WCSessionDelegate, ObservableObject {
         super.init()
         session.delegate = self
         session.activate()
-        print("WC init")
     }
     
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: (any Error)?) {
@@ -39,6 +38,7 @@ class WatchConnector: NSObject, WCSessionDelegate, ObservableObject {
         updateConnectionStatus(session)
     }
     
+    // MARK: Handle new session
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
         print(message)
     }

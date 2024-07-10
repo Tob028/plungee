@@ -26,10 +26,20 @@ class WatchIOSConnector: NSObject, WCSessionDelegate, ObservableObject {
         }
     }
     
-    func sendSessionToIOS(workout: HKWorkout?) {
+    func sendSessionToIOS(workout: Session) {
         if (session.isReachable) {
-            let data: [String: Any] = ["duration": workout?.duration ?? 0]
-            session.sendMessage(data, replyHandler: nil)
+            let data: [String: Any] = [
+                "type": workout.exposureType as Any,
+                "startTime": workout.timeInterval.start as Any,
+                "endTime": workout.timeInterval.end as Any,
+                "statistics": workout.statistics as Any,
+                "events": workout.events as Any
+            ]
+            print(workout.events)
+            print(workout.statistics)
+            session.sendMessage(data, replyHandler: nil) { error in
+                print(error.localizedDescription)
+            }
         } else {
             print("session is not reachable")
         }

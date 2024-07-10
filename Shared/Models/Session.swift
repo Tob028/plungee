@@ -17,19 +17,19 @@ class Session {
     
     var events: [HKWorkoutEvent]
     
-    var configuration: HKWorkoutConfiguration
+    //var configuration: HKWorkoutConfiguration
     
     init(
         exposureType: ExposureType,
-        startDate: Date,
-        endDate: Date,
-        configutation: HKWorkoutConfiguration,
+        startDate: Date?,
+        endDate: Date?,
+        //configutation: HKWorkoutConfiguration,
         events: [HKWorkoutEvent],
         statistics: [HKQuantityType: HKStatistics]
     ) {
         self.exposureType = exposureType
-        timeInterval = DateInterval(start: startDate, end: endDate)
-        self.configuration = configutation
+        timeInterval = DateInterval(start: startDate ?? Date.now, end: endDate ?? Date.now)
+        //self.configuration = configutation
         self.events = events
         self.statistics = statistics
     }

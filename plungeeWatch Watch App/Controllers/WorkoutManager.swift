@@ -150,7 +150,14 @@ extension WorkoutManager: HKWorkoutSessionDelegate {
                 self.builder?.finishWorkout { (workout, error) in
                     DispatchQueue.main.async {
                         self.workout = workout
-                        self.watchConnector.sendSessionToIOS(workout: self.workout ?? nil)
+                        let session = Session(
+                            exposureType: self.workoutType,
+                            startDate: workout?.startDate,
+                            endDate: workout?.endDate,
+                            events: workout?.workoutEvents ?? [HKWorkoutEvent](),
+                            statistics: workout?.allStatistics ?? [HKQuantityType : HKStatistics]()
+                        )
+                        self.watchConnector.sendSessionToIOS(workout: session)
                     }
                 }
             }

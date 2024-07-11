@@ -29,11 +29,11 @@ class WatchIOSConnector: NSObject, WCSessionDelegate, ObservableObject {
     func sendSessionToIOS(workout: Session) {
         if (session.isReachable) {
             let data: [String: Any] = [
-                "type": workout.exposureType as Any,
-                "startTime": workout.timeInterval.start as Any,
-                "endTime": workout.timeInterval.end as Any,
-                "statistics": workout.statistics as Any,
-                "events": workout.events as Any
+                "type": workout.exposureType as ExposureType,
+                "startTime": workout.timeInterval.start as Date,
+                "endTime": workout.timeInterval.end as Date,
+                "statistics": workout.statistics as NSDictionary,
+                "events": workout.events as NSArray
             ]
             print(workout.events)
             print(workout.statistics)

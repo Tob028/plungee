@@ -25,7 +25,6 @@
 		989875A82C2D962F00D771AB /* plungee.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 9898759B2C2D962D00D771AB /* plungee.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		989875B12C2D9D5600D771AB /* SessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989875B02C2D9D5500D771AB /* SessionView.swift */; };
 		989875B32C2D9E0600D771AB /* MetricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989875B22C2D9E0600D771AB /* MetricsView.swift */; };
-		98B719EA2C36C14400D6DA88 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98B719E92C36C14400D6DA88 /* GoogleService-Info.plist */; };
 		98BAB3B72C33E20F00AE0637 /* WatchIOSConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BAB3B62C33E20F00AE0637 /* WatchIOSConnector.swift */; };
 		98C491592C36FEFC00F21C32 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C491552C36FEFC00F21C32 /* HomeView.swift */; };
 		98C4915A2C36FEFC00F21C32 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C491562C36FEFC00F21C32 /* SettingsView.swift */; };
@@ -87,7 +86,6 @@
 		989875A42C2D962F00D771AB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		989875B02C2D9D5500D771AB /* SessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionView.swift; sourceTree = "<group>"; };
 		989875B22C2D9E0600D771AB /* MetricsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsView.swift; sourceTree = "<group>"; };
-		98B719E92C36C14400D6DA88 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		98BAB3B62C33E20F00AE0637 /* WatchIOSConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchIOSConnector.swift; sourceTree = "<group>"; };
 		98C491552C36FEFC00F21C32 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		98C491562C36FEFC00F21C32 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -157,7 +155,6 @@
 				98E0ED642BB6027C00AE977C /* Views */,
 				986538362BB6A7510091DA64 /* Utils */,
 				98688E0F2B55837700638572 /* Assets.xcassets */,
-				98B719E92C36C14400D6DA88 /* GoogleService-Info.plist */,
 				98688E112B55837700638572 /* Preview Content */,
 			);
 			path = plungee;
@@ -359,7 +356,6 @@
 			files = (
 				98688E132B55837700638572 /* Preview Assets.xcassets in Resources */,
 				98688E102B55837700638572 /* Assets.xcassets in Resources */,
-				98B719EA2C36C14400D6DA88 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

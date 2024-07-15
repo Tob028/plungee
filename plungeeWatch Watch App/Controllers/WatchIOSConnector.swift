@@ -28,15 +28,7 @@ class WatchIOSConnector: NSObject, WCSessionDelegate, ObservableObject {
     
     func sendSessionToIOS(workout: Session) {
         if (session.isReachable) {
-            let data: [String: Any] = [
-                "type": workout.exposureType as ExposureType,
-                "startTime": workout.timeInterval.start as Date,
-                "endTime": workout.timeInterval.end as Date,
-                "statistics": workout.statistics as NSDictionary,
-                "events": workout.events as NSArray
-            ]
-            print(workout.events)
-            print(workout.statistics)
+            let data: [String: Any] = workout.serialize()
             session.sendMessage(data, replyHandler: nil) { error in
                 print(error.localizedDescription)
             }

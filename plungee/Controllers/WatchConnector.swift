@@ -41,7 +41,6 @@ class WatchConnector: NSObject, WCSessionDelegate, ObservableObject {
     
     // MARK: Handle new session
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
-        print("got msg")
         let workout = Session(
             exposureType: message["type"] as? ExposureType ?? .plunge,
             startDate: message["startTime"] as? Date ?? Date.now,
@@ -49,9 +48,7 @@ class WatchConnector: NSObject, WCSessionDelegate, ObservableObject {
             events: message["events"] as? [HKWorkoutEvent] ?? [HKWorkoutEvent](),
             statistics: message["statistics"] as? [HKQuantityType : HKStatistics] ?? [HKQuantityType : HKStatistics]()
         )
-        print(workout.exposureType.rawValue)
-        print(workout.statistics)
-        print(workout.events)
+        print(message)
     }
     
     private func updateConnectionStatus(_ session: WCSession) {

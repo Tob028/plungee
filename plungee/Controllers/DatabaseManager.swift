@@ -6,10 +6,16 @@
 //
 
 import Foundation
-//import FirebaseFirestore
+import FirebaseFirestore
 
 class DatabaseManager {
-    func saveSessionToDB(session: Session) {
-        
+    static let db = Firestore.firestore()
+    
+    static func saveSessionToDB(session: [String: Any]) {
+        db.collection("sessions").addDocument(data: session) { error in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        }
     }
 }

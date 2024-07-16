@@ -10,6 +10,10 @@
 		980339DD2C342AFA00D223F2 /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 980339DC2C342AFA00D223F2 /* WatchConnectivity.framework */; };
 		980961292C240E5300C30891 /* WatchConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980961282C240E5300C30891 /* WatchConnector.swift */; };
 		983226582C36EE49002DE360 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983226572C36EE49002DE360 /* SummaryView.swift */; };
+		984F3C942C45B6DD0048569E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 984F3C932C45B6DD0048569E /* GoogleService-Info.plist */; };
+		984F3C962C45B7060048569E /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 984F3C952C45B7060048569E /* FirebaseAnalytics */; };
+		984F3C982C45B7060048569E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 984F3C972C45B7060048569E /* FirebaseAuth */; };
+		984F3C9A2C45B7060048569E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 984F3C992C45B7060048569E /* FirebaseFirestore */; };
 		9865601C2C352F5B008D2D8A /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9865601B2C352F5B008D2D8A /* WatchConnectivity.framework */; };
 		98663E012BB6097D00608098 /* TabItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98663E002BB6097D00608098 /* TabItems.swift */; };
 		98688E0C2B55837500638572 /* plungeeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98688E0B2B55837500638572 /* plungeeApp.swift */; };
@@ -68,6 +72,7 @@
 		980339DC2C342AFA00D223F2 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.5.sdk/System/Library/Frameworks/WatchConnectivity.framework; sourceTree = DEVELOPER_DIR; };
 		980961282C240E5300C30891 /* WatchConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnector.swift; sourceTree = "<group>"; };
 		983226572C36EE49002DE360 /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
+		984F3C932C45B6DD0048569E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9865601B2C352F5B008D2D8A /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS10.5.sdk/System/Library/Frameworks/WatchConnectivity.framework; sourceTree = DEVELOPER_DIR; };
 		98663E002BB6097D00608098 /* TabItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItems.swift; sourceTree = "<group>"; };
 		98688E082B55837500638572 /* plungee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = plungee.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,6 +108,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				984F3C962C45B7060048569E /* FirebaseAnalytics in Frameworks */,
+				984F3C9A2C45B7060048569E /* FirebaseFirestore in Frameworks */,
+				984F3C982C45B7060048569E /* FirebaseAuth in Frameworks */,
 				980339DD2C342AFA00D223F2 /* WatchConnectivity.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -155,6 +163,7 @@
 				98E0ED642BB6027C00AE977C /* Views */,
 				986538362BB6A7510091DA64 /* Utils */,
 				98688E0F2B55837700638572 /* Assets.xcassets */,
+				984F3C932C45B6DD0048569E /* GoogleService-Info.plist */,
 				98688E112B55837700638572 /* Preview Content */,
 			);
 			path = plungee;
@@ -287,6 +296,9 @@
 			);
 			name = plungee;
 			packageProductDependencies = (
+				984F3C952C45B7060048569E /* FirebaseAnalytics */,
+				984F3C972C45B7060048569E /* FirebaseAuth */,
+				984F3C992C45B7060048569E /* FirebaseFirestore */,
 			);
 			productName = plungee;
 			productReference = 98688E082B55837500638572 /* plungee.app */;
@@ -356,6 +368,7 @@
 			files = (
 				98688E132B55837700638572 /* Preview Assets.xcassets in Resources */,
 				98688E102B55837700638572 /* Assets.xcassets in Resources */,
+				984F3C942C45B6DD0048569E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -717,6 +730,24 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		984F3C952C45B7060048569E /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 98D7B6942C3965810033300A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		984F3C972C45B7060048569E /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 98D7B6942C3965810033300A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		984F3C992C45B7060048569E /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 98D7B6942C3965810033300A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 98688E002B55837500638572 /* Project object */;
 }

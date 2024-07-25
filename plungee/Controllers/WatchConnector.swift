@@ -49,7 +49,6 @@ class WatchConnector: NSObject, WCSessionDelegate, ObservableObject {
             events: message["events"] as? [HKWorkoutEvent] ?? [HKWorkoutEvent](),
             statistics: message["statistics"] as? [HKQuantityType : HKStatistics] ?? [HKQuantityType : HKStatistics]()
         )*/
-        print(message)
         DatabaseManager.saveSessionToDB(session: message)
     }
     

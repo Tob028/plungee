@@ -22,7 +22,9 @@ struct plungeeApp: App {
     
     var body: some Scene {
         WindowGroup {
-            MainView().environmentObject(watchConnector)
+            ContentView()
+                .environmentObject(watchConnector)
+                .preferredColorScheme(.light)
         }
     }
 }

@@ -46,14 +46,14 @@ class Session {
         
         for (quantityType, statistics) in statistics {
             let unit = HKUnit.count().unitDivided(by: .minute()) // Adjust this to the unit you want
-            let avgValue = statistics.averageQuantity()?.doubleValue(for: unit)
-            let maxValue = statistics.maximumQuantity()?.doubleValue(for: unit)
-            let minValue = statistics.minimumQuantity()?.doubleValue(for: unit)
+            let avgValue = statistics.averageQuantity()?.doubleValue(for: unit) ?? 0.0
+            let maxValue = statistics.maximumQuantity()?.doubleValue(for: unit) ?? 0.0
+            let minValue = statistics.minimumQuantity()?.doubleValue(for: unit) ?? 0.0
             
             serializedStats[quantityType.identifier] = [
-                "average": avgValue as Any,
-                "maximum": maxValue as Any,
-                "minimum": minValue as Any
+                "average": NSNumber(value: avgValue),
+                "maximum": NSNumber(value: maxValue),
+                "minimum": NSNumber(value: minValue)
             ]
         }
         

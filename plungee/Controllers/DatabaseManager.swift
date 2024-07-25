@@ -12,6 +12,7 @@ class DatabaseManager {
     static let db = Firestore.firestore()
     
     static func saveSessionToDB(session: [String: Any]) {
+        print(session)
         db.collection("sessions").addDocument(data: session) { error in
             if let error = error {
                 print(error.localizedDescription)

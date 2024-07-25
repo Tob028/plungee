@@ -7,30 +7,33 @@
 
 import SwiftUI
 
-struct MainView: View {
+struct ContentView: View {
     
     var body: some View {
         NavigationStack {
-            ZStack(alignment: .bottom) {
-                TabView() {
-                    HomeView()
-                        .tag(0)
-                        .toolbar(.hidden, for: .tabBar)
-                    
-                    StatsView()
-                        .tag(1)
-                        .toolbar(.hidden, for: .tabBar)
-                    
-                    SettingsView()
-                        .tag(2)
-                        .toolbar(.hidden, for: .tabBar)
-                }
+            TabView() {
+                DashboardView()
+                    .tag(0)
+                    .tabItem {
+                        Label("Dashboard", systemImage: "chart.xyaxis.line")
+                    }
+                
+                StartView()
+                    .tag(1)
+                    .tabItem {
+                        Label("Start", systemImage: "play.fill")
+                    }
+                
+                SettingsView()
+                    .tag(2)
+                    .tabItem {
+                        Label("Settings", systemImage: "gearshape")
+                    }
             }
         }
-        .preferredColorScheme(.light)
     }
 }
 
 #Preview {
-    MainView().environmentObject(WatchConnector())
+    ContentView().environmentObject(WatchConnector())
 }

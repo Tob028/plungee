@@ -8,67 +8,92 @@
 import Foundation
 import HealthKit
 
-class Session {
+struct Session {
     var exposureType: ExposureType
     
     var timeInterval: DateInterval
     
-    var statistics: [HKQuantityType: HKStatistics]
+    var statistics: [String: Any]
     
-    var events: [[String: Any]]
-    
-    //var configuration: HKWorkoutConfiguration
+    var events: [SessionEvents]
     
     init(
         exposureType: ExposureType,
-        startDate: Date?,
-        endDate: Date?,
-        //configutation: HKWorkoutConfiguration,
-        events: [HKWorkoutEvent],
+        startDate: Date,
+        endDate: Date,
+        events: [SessionEvents],
         statistics: [HKQuantityType: HKStatistics]
     ) {
+        // init
         self.exposureType = exposureType
-        timeInterval = DateInterval(start: startDate ?? Date.now, end: endDate ?? Date.now)
-        //self.configuration = configutation
-        self.events = events.map { event in
-            [
-                "type": event.type.rawValue,
-                "startDate": event.dateInterval.start,
-                "endDate": event.dateInterval.end
-            ]
-        }
-
-        self.statistics = statistics
-    }
-    
-    func serializeStatistics() -> [String: Any] {
-        var serializedStats = [String: Any]()
+        self.timeInterval = DateInterval(start: startDate, end: endDate)
         
-        for (quantityType, statistics) in statistics {
-            let unit = HKUnit.count().unitDivided(by: .minute()) // Adjust this to the unit you want
-            let avgValue = statistics.averageQuantity()?.doubleValue(for: unit) ?? 0.0
-            let maxValue = statistics.maximumQuantity()?.doubleValue(for: unit) ?? 0.0
-            let minValue = statistics.minimumQuantity()?.doubleValue(for: unit) ?? 0.0
-            
-            serializedStats[quantityType.identifier] = [
-                "average": NSNumber(value: avgValue),
-                "maximum": NSNumber(value: maxValue),
-                "minimum": NSNumber(value: minValue)
-            ]
-        }
-        
-        return serializedStats
-    }
-    
-    func serialize() -> [String: Any] {
-        return [
-            "exposureType": exposureType.rawValue,
-            "startDate": timeInterval.start,
-            "endDate": timeInterval.end,
-            "events": events,
-            "statistics": serializeStatistics()
-        ]
     }
 }
 
+struct SessionStatistics {
+    
+}
 
+
+struct SessionEvents {
+    var type: String
+    
+    var timeInterval: DateInterval
+    
+    var metadata: [String: Any]?
+    
+    init(type: HKWorkoutEventType, timeInterval: DateInterval, metadata: [String: Any]?) {
+        self.type = type.stringValue
+        self.timeInterval = timeInterval
+        self.metadata = metadata
+    }
+}
+
+extension HKWorkoutEventType {
+    var stringValue: String {
+        switch self {
+        case .pause:
+            return "pause"
+        case .resume:
+            return "resume"
+        case .lap:
+            return "lap"
+        case .marker:
+            return "marker"
+        case .motionPaused:
+            return "motionPaused"
+        case .motionResumed:
+            return "motionResumed"
+        case .segment:
+            return "segment"
+        case .pauseOrResumeRequest:
+            return "pauseOrResumeRequest"
+        @unknown default:
+            fatalError("Unknown HKWorkoutEventType")
+        }
+    }
+    
+    init?(stringValue: String) {
+        switch stringValue {
+        case "pause":
+            self = .pause
+        case "resume":
+            self = .resume
+        case "lap":
+            self = .lap
+        case "marker":
+            self = .marker
+        case "motionPaused":
+            self = .motionPaused
+        case "motionResumed":
+            self = .motionResumed
+        case "segment":
+            self = .segment
+        case "pauseOrResumeRequest":
+            self = .pauseOrResumeRequest
+        default:
+            return nil
+        }
+    }
+}

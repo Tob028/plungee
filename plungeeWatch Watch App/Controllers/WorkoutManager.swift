@@ -148,14 +148,42 @@ extension WorkoutManager: HKWorkoutSessionDelegate {
         if toState == .ended {
             builder?.endCollection(withEnd: date) { (success, error) in
                 self.builder?.finishWorkout { (workout, error) in
+                    guard let workout = workout else {
+                        return
+                    }
+                    
                     DispatchQueue.main.async {
                         self.workout = workout
+                        let sessionEvents: [SessionEvent] = workout.workoutEvents?.compactMap { event in
+                            SessionEvent(
+                                type: event.type.stringValue,
+                                duration: event.dateInterval,
+                                metadata: event.metadata
+                            )
+                        } ?? []
+                        
+                        let sessionStatistics: [SessionStatistics] = workout.allStatistics.compactMap { (quantityType, statistics) in
+                            let unit = HKUnit(from: "count/min")
+                            guard let avgValue = statistics.averageQuantity()?.doubleValue(for: unit),
+                                  let maxValue = statistics.maximumQuantity()?.doubleValue(for: unit),
+                                  let minValue = statistics.minimumQuantity()?.doubleValue(for: unit) else {
+                                return nil
+                            }
+                            
+                            return SessionStatistics(
+                                type: quantityType.identifier,
+                                minValue: minValue,
+                                maxValue: maxValue,
+                                avgValue: avgValue
+                            )
+                        }
+                        
                         let session = Session(
                             exposureType: self.workoutType,
-                            startDate: workout?.startDate,
-                            endDate: workout?.endDate,
-                            events: workout?.workoutEvents ?? [HKWorkoutEvent](),
-                            statistics: workout?.allStatistics ?? [HKQuantityType : HKStatistics]()
+                            startDate: workout.startDate,
+                            endDate: workout.endDate,
+                            events: sessionEvents,
+                            statistics: sessionStatistics
                         )
                         self.watchConnector.sendSessionToIOS(workout: session)
                     }

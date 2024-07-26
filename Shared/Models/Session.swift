@@ -11,41 +11,55 @@ import HealthKit
 struct Session {
     var exposureType: ExposureType
     
-    var timeInterval: DateInterval
+    var duration: DateInterval
     
-    var statistics: [String: Any]
+    var statistics: [SessionStatistics]
     
-    var events: [SessionEvents]
+    var events: [SessionEvent]
     
     init(
         exposureType: ExposureType,
         startDate: Date,
         endDate: Date,
-        events: [SessionEvents],
-        statistics: [HKQuantityType: HKStatistics]
+        events: [SessionEvent],
+        statistics: [SessionStatistics]
     ) {
         // init
         self.exposureType = exposureType
-        self.timeInterval = DateInterval(start: startDate, end: endDate)
-        
+        self.duration = DateInterval(start: startDate, end: endDate)
+        self.events = events
+        self.statistics = statistics
     }
 }
 
 struct SessionStatistics {
+    var type: String
     
+    var minValue: Double
+    
+    var maxValue: Double
+    
+    var avgValue: Double
+    
+    init(type: String, minValue: Double, maxValue: Double, avgValue: Double) {
+        self.type = type
+        self.minValue = minValue
+        self.maxValue = maxValue
+        self.avgValue = avgValue
+    }
 }
 
 
-struct SessionEvents {
+struct SessionEvent {
     var type: String
     
-    var timeInterval: DateInterval
+    var duration: DateInterval
     
     var metadata: [String: Any]?
     
-    init(type: HKWorkoutEventType, timeInterval: DateInterval, metadata: [String: Any]?) {
-        self.type = type.stringValue
-        self.timeInterval = timeInterval
+    init(type: String, duration: DateInterval, metadata: [String: Any]?) {
+        self.type = type
+        self.duration = duration
         self.metadata = metadata
     }
 }

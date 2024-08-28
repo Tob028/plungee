@@ -11,14 +11,22 @@ enum ExposureType: String, Hashable {
     case plunge = "Plunge"
     case shower = "Shower"
     case sauna = "Sauna"
-}
-
-struct TrackingTypes {
-    var type: ExposureType
     
+    var icon: String {
+        switch self {
+        case .plunge:
+            return "❄️"
+        case .shower:
+            return "🚿"
+        case .sauna:
+            return "🔥"
+        }
+    }
 }
 
 var exposureTypes: [ExposureType] = [.plunge, .shower, .sauna]
+
+
 
 extension ExposureType: Identifiable {
     var id: String { rawValue }

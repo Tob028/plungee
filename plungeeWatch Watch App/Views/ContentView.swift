@@ -13,7 +13,14 @@ struct ContentView: View {
     var body: some View {
         List(exposureTypes) { item in
             NavigationLink(value: item) {
-                Text(item.rawValue)
+                HStack {
+                    Text(item.icon)
+                        .font(.title3)
+                    
+                    Text(item.rawValue)
+                        .fontWeight(.medium)
+                }
+                .padding()
             }
         }
         .listStyle(.carousel)

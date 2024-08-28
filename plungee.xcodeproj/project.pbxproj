@@ -260,8 +260,8 @@
 		98EC22E22C7E2AEF007A7CDD /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				98EC22E02C7E2AEF007A7CDD /* ElapsedTimeView.swift */,
 				98EC22E12C7E2AEF007A7CDD /* ExposureType.swift */,
+				98EC22E02C7E2AEF007A7CDD /* ElapsedTimeView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";

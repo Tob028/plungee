@@ -26,10 +26,12 @@ struct ControlsView: View {
                 tint: .yellow
             )
             
-            ControlButton(action: WKInterfaceDevice.current().enableWaterLock,
-                          icon: "drop.fill",
-                          text: "Lock",
-                          tint: .cyan)
+            ControlButton(
+                action: WKInterfaceDevice.current().enableWaterLock,
+                icon: "drop.fill",
+                text: "Lock",
+                tint: .cyan
+            )
         }
     }
 }

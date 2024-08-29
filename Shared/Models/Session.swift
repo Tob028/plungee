@@ -7,10 +7,15 @@
 
 import Foundation
 
-struct Session {
+struct Session: Codable, Identifiable {
+    var id: UUID = UUID()
+    
     var exposureType: ExposureType
     
-    var duration: DateInterval
+    //var duration: DateInterval
+    var startDate: Date
+    
+    var endDate: Date
     
     var statistics: [SessionStatistics]
     
@@ -24,23 +29,9 @@ struct Session {
         statistics: [SessionStatistics]
     ) {
         self.exposureType = exposureType
-        self.duration = DateInterval(start: startDate, end: endDate)
+        self.startDate = startDate
+        self.endDate = endDate
         self.events = events
         self.statistics = statistics
-    }
-    
-    func serialize() -> [String: Any] {
-        var dict: [String: Any] = [:]
-        
-        dict["exposureType"] = exposureType.rawValue
-        dict["duration"] = [
-            "startDate": duration.start.timeIntervalSince1970,
-            "endDate": duration.end.timeIntervalSince1970
-        ]
-        
-        dict["statistics"] = statistics.map { $0.serialize() }
-        dict["events"] = events.map { $0.serialize() }
-        
-        return dict
     }
 }

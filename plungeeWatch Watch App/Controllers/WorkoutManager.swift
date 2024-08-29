@@ -124,8 +124,9 @@ class WorkoutManager: NSObject, ObservableObject {
                 self.heartRate = statistics.mostRecentQuantity()?.doubleValue(for: heartRateUnit) ?? 0
                 self.averageHeartRate = statistics.averageQuantity()?.doubleValue(for: heartRateUnit) ?? 0
             case HKQuantityType.quantityType(forIdentifier: .activeEnergyBurned):
-                let energyUnit = HKUnit.kilocalorie()
+                //let energyUnit = HKUnit.kilocalorie()
                 //self.activeEnergy = statistics.sumQuantity()?.doubleValue(for: energyUnit) ?? 0
+                return
             case HKQuantityType.quantityType(forIdentifier: .waterTemperature):
                 let temperatureUnit = HKUnit.degreeCelsius()
                 self.waterTemperature = statistics.mostRecentQuantity()?.doubleValue(for: temperatureUnit) ?? 0

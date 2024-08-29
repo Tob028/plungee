@@ -41,15 +41,14 @@ class WatchConnector: NSObject, WCSessionDelegate, ObservableObject {
     
     // MARK: Handle new session
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
-        /*
-        let workout = Session(
-            exposureType: message["type"] as? ExposureType ?? .plunge,
-            startDate: message["startTime"] as? Date ?? Date.now,
-            endDate: message["endTime"] as? Date ?? Date.now,
-            events: message["events"] as? [HKWorkoutEvent] ?? [HKWorkoutEvent](),
-            statistics: message["statistics"] as? [HKQuantityType : HKStatistics] ?? [HKQuantityType : HKStatistics]()
-        )*/
-        DatabaseManager.saveSessionToDB(session: message)
+        do {
+            let jsonData = try JSONSerialization.data(withJSONObject: message, options: [])
+            let workout = try JSONDecoder().decode(Session.self, from: jsonData)
+            print(workout)
+            DatabaseManager.saveSessionToDB(session: workout)
+        } catch {
+            print("Failed to decode session: \(error.localizedDescription)")
+        }
     }
     
     private func updateConnectionStatus(_ session: WCSession) {

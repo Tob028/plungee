@@ -54,7 +54,8 @@ struct SummaryView: View {
         let sessionEvents: [SessionEvent] = workoutManager.workout?.workoutEvents?.compactMap { event in
             SessionEvent(
                 type: event.type.stringValue,
-                duration: event.dateInterval,
+                startDate: event.dateInterval.start,
+                endDate: event.dateInterval.end,
                 metadata: event.metadata
             )
         } ?? []

@@ -7,7 +7,9 @@
 
 import Foundation
 
-struct SessionStatistics {
+struct SessionStatistics: Codable, Identifiable {
+    var id: UUID = UUID()
+    
     var type: String
     
     var minValue: Int
@@ -21,14 +23,5 @@ struct SessionStatistics {
         self.minValue = minValue
         self.maxValue = maxValue
         self.avgValue = avgValue
-    }
-    
-    func serialize() -> [String: Any] {
-        return [
-            "type": type,
-            "minValue": minValue,
-            "maxValue": maxValue,
-            "avgValue": avgValue
-        ]
     }
 }

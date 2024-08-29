@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum ExposureType: String, Hashable {
+enum ExposureType: String, Hashable, Codable {
     case plunge = "Plunge"
     case shower = "Shower"
     case sauna = "Sauna"

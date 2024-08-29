@@ -11,13 +11,19 @@ import FirebaseFirestore
 class DatabaseManager {
     static let db = Firestore.firestore()
     
-    static func saveSessionToDB(session: [String: Any]) {
-        db.collection("sessions").addDocument(data: session) { error in
-            if let error = error {
-                print(error.localizedDescription)
+    static func saveSessionToDB(session: Session) {
+        do {
+            let data = try JSONEncoder().encode(session)
+            
+            if let sessionDictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                db.collection("sessions").addDocument(data: sessionDictionary) { error in
+                    if let error = error {
+                        print("Error saving session to Firestore: \(error.localizedDescription)")
+                    }
+                }
             }
+        } catch {
+            print("Failed to encode session: \(error.localizedDescription)")
         }
-        print(session)
-        return
     }
 }

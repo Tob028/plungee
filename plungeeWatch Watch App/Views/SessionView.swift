@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WatchKit
 
 struct SessionView: View {
     @EnvironmentObject var workoutManager: WorkoutManager
@@ -32,6 +33,11 @@ struct SessionView: View {
         )
         .onChange(of: workoutManager.running) {
             displayMetricsView()
+        }
+        .onChange(of: WKInterfaceDevice.current().isWaterLockEnabled) { oldValue, newValue in
+            if (newValue) {
+                displayMetricsView()
+            }
         }
     }
     

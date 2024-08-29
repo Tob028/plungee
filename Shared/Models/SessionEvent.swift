@@ -8,30 +8,22 @@
 import Foundation
 import HealthKit
 
-struct SessionEvent {
+struct SessionEvent: Codable, Identifiable {
+    var id: UUID = UUID()
+    
     var type: String
     
-    var duration: DateInterval
+    var startDate: Date
     
-    var metadata: [String: Any]?
+    var endDate: Date
     
-    init(type: String, duration: DateInterval, metadata: [String: Any]?) {
+    //var metadata: [String: Any]?
+    
+    init(type: String, startDate: Date, endDate: Date, metadata: [String: Any]?) {
         self.type = type
-        self.duration = duration
-        self.metadata = metadata
-    }
-    
-    func serialize() -> [String: Any] {
-        var dict: [String: Any] = [:]
-        
-        dict["type"] = type
-        dict["duration"] = [
-            "startDate": duration.start.timeIntervalSince1970,
-            "endDate": duration.end.timeIntervalSince1970
-        ]
-        dict["metadata"] = metadata
-        
-        return dict
+        self.startDate = startDate
+        self.endDate = endDate
+        //self.metadata = metadata
     }
 }
 

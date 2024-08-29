@@ -25,11 +25,19 @@ class WatchConnectorIOS: NSObject, ObservableObject, WCSessionDelegate {
     }
 
     func sendSession(workout: Session) {
-        if (session.isReachable) {
-            let data = workout.serialize()
-            session.sendMessage(data, replyHandler: nil)
+        if session.isReachable {
+            do {
+                let data = try JSONEncoder().encode(workout)
+                
+                if let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                    session.sendMessage(dictionary, replyHandler: nil)
+                    print(dictionary)
+                }
+            } catch {
+                print("Failed to encode session: \(error.localizedDescription)")
+            }
         } else {
-            // TODO: Handle iphone unreachable
+            // Handle iPhone unreachable
             print("session is not reachable")
         }
     }

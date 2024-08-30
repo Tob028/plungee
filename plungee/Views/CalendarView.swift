@@ -8,13 +8,7 @@
 import SwiftUI
 
 struct CalendarView: View {
-    let sessions: [Session] = [
-        Session(exposureType: .plunge, startDate: Date(), endDate: Date(), events: [], statistics: []),
-        Session(exposureType: .shower, startDate: Date(), endDate: Date(), events: [], statistics: []),
-        Session(exposureType: .sauna, startDate: Date(), endDate: Date(), events: [], statistics: []),
-        Session(exposureType: .plunge, startDate: Date(), endDate: Date(), events: [], statistics: []),
-        Session(exposureType: .sauna, startDate: Date(), endDate: Date(), events: [], statistics: [])
-    ]
+    @State var sessions: [Session] = []
     
     var body: some View {
         ScrollView {
@@ -38,6 +32,16 @@ struct CalendarView: View {
             Spacer()
         }
         .frame(maxWidth: .infinity, alignment: .center)
+        .onAppear {
+            fetchSessionData()
+        }
+    }
+    
+    func fetchSessionData() {
+        // fetch
+        DatabaseManager.fetchSessionData { data in
+            self.sessions = data
+        }
     }
 }
 
@@ -54,19 +58,28 @@ struct ListItem: View {
                 .font(.largeTitle)
             
             VStack(alignment: .leading) {
-                Text("16/2/2024")
+                Text(formatStartDate())
                     .font(.title2)
                     .bold()
                 
-                Text("20 min")
+                Text("\(sessionDuration()) min")
                     .font(.headline)
             }
-            //.padding()
             
             Spacer()
         }
         .padding()
         .background(.gray.opacity(0.3))
         .clipShape(RoundedRectangle(cornerRadius: 20.0))
+    }
+    
+    func formatStartDate() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "d/M/yyyy"
+        return dateFormatter.string(from: session.startDate)
+    }
+    
+    func sessionDuration() -> Int {
+        return Int(session.endDate.timeIntervalSince(session.startDate) / 60)
     }
 }

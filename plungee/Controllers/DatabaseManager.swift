@@ -23,7 +23,35 @@ class DatabaseManager {
                 }
             }
         } catch {
-            print("Failed to encode session: \(error.localizedDescription)")
+            print(error.localizedDescription)
+        }
+    }
+    
+    static func fetchSessionData(completion: @escaping ([Session]) -> Void) {
+        db.collection("sessions").getDocuments { querySnapshot, error in
+            if let error = error {
+                print("Error fetching sessions: \(error.localizedDescription)")
+                completion([])
+                return
+            }
+            
+            guard let documents = querySnapshot?.documents else {
+                print("No documents found")
+                completion([])
+                return
+            }
+            
+            let sessions: [Session] = documents.compactMap { document in
+                do {
+                    let jsonData = try JSONSerialization.data(withJSONObject: document.data(), options: [])
+                    return try JSONDecoder().decode(Session.self, from: jsonData)
+                } catch {
+                    print("Error decoding session: \(error.localizedDescription)")
+                    return nil
+                }
+            }
+            
+            completion(sessions)
         }
     }
 }

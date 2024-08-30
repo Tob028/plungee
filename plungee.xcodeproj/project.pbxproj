@@ -45,6 +45,7 @@
 		98EC230D2C7E3FFF007A7CDD /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 98EC230C2C7E3FFF007A7CDD /* FirebaseAuth */; };
 		98EC230F2C7E3FFF007A7CDD /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 98EC230E2C7E3FFF007A7CDD /* FirebaseFirestore */; };
 		98EC23112C7E408B007A7CDD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98EC23102C7E408B007A7CDD /* GoogleService-Info.plist */; };
+		98F90AAA2C8261BA004C1B7B /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F90AA92C8261BA004C1B7B /* DatabaseService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,7 @@
 		98EC23082C7E39AC007A7CDD /* plungeeWatch-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "plungeeWatch-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		98EC23102C7E408B007A7CDD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		98F90AA82C81FD71004C1B7B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		98F90AA92C8261BA004C1B7B /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +214,7 @@
 			children = (
 				98EC22BD2C7E2809007A7CDD /* WatchConnector.swift */,
 				98EC22BC2C7E2809007A7CDD /* DatabaseManager.swift */,
+				98F90AA92C8261BA004C1B7B /* DatabaseService.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				98EC22E72C7E2AF0007A7CDD /* SessionEvent.swift in Sources */,
 				98EC22CD2C7E281F007A7CDD /* DashboardView.swift in Sources */,
 				98EC22D22C7E2881007A7CDD /* AppDelegate.swift in Sources */,
+				98F90AAA2C8261BA004C1B7B /* DatabaseService.swift in Sources */,
 				98EC22F32C7E2AF0007A7CDD /* ExposureType.swift in Sources */,
 				98EC22F12C7E2AF0007A7CDD /* ElapsedTimeView.swift in Sources */,
 				98EC22C02C7E2809007A7CDD /* WatchConnector.swift in Sources */,

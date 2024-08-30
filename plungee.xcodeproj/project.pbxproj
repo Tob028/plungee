@@ -18,7 +18,7 @@
 		98EC22B62C7E26B4007A7CDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98EC22B42C7E26B4007A7CDD /* Assets.xcassets */; };
 		98EC22BE2C7E2809007A7CDD /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EC22BC2C7E2809007A7CDD /* DatabaseManager.swift */; };
 		98EC22C02C7E2809007A7CDD /* WatchConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EC22BD2C7E2809007A7CDD /* WatchConnector.swift */; };
-		98EC22C92C7E281F007A7CDD /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EC22C32C7E281E007A7CDD /* StartView.swift */; };
+		98EC22C92C7E281F007A7CDD /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EC22C32C7E281E007A7CDD /* CalendarView.swift */; };
 		98EC22CB2C7E281F007A7CDD /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EC22C42C7E281E007A7CDD /* SettingsView.swift */; };
 		98EC22CD2C7E281F007A7CDD /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EC22C52C7E281E007A7CDD /* DashboardView.swift */; };
 		98EC22CF2C7E281F007A7CDD /* WatchReachableIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EC22C62C7E281F007A7CDD /* WatchReachableIndicator.swift */; };
@@ -84,7 +84,7 @@
 		98EC22B72C7E2767007A7CDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		98EC22BC2C7E2809007A7CDD /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		98EC22BD2C7E2809007A7CDD /* WatchConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchConnector.swift; sourceTree = "<group>"; };
-		98EC22C32C7E281E007A7CDD /* StartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		98EC22C32C7E281E007A7CDD /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		98EC22C42C7E281E007A7CDD /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		98EC22C52C7E281E007A7CDD /* DashboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		98EC22C62C7E281F007A7CDD /* WatchReachableIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchReachableIndicator.swift; sourceTree = "<group>"; };
@@ -222,7 +222,7 @@
 				98EC22D32C7E29BA007A7CDD /* ContentView.swift */,
 				98EC22C52C7E281E007A7CDD /* DashboardView.swift */,
 				98EC22C42C7E281E007A7CDD /* SettingsView.swift */,
-				98EC22C32C7E281E007A7CDD /* StartView.swift */,
+				98EC22C32C7E281E007A7CDD /* CalendarView.swift */,
 				98EC22C62C7E281F007A7CDD /* WatchReachableIndicator.swift */,
 			);
 			path = Views;
@@ -388,7 +388,7 @@
 				98EC22F12C7E2AF0007A7CDD /* ElapsedTimeView.swift in Sources */,
 				98EC22C02C7E2809007A7CDD /* WatchConnector.swift in Sources */,
 				98EC22D42C7E29BA007A7CDD /* ContentView.swift in Sources */,
-				98EC22C92C7E281F007A7CDD /* StartView.swift in Sources */,
+				98EC22C92C7E281F007A7CDD /* CalendarView.swift in Sources */,
 				98EC22E92C7E2AF0007A7CDD /* SessionStatistic.swift in Sources */,
 				98EC22892C7E2566007A7CDD /* plungeeApp.swift in Sources */,
 				98EC22BE2C7E2809007A7CDD /* DatabaseManager.swift in Sources */,

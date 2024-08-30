@@ -1,7 +1,6 @@
 # plungee
 
-![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
-![License](https://img.shields.io/badge/license-MIT-blue)
+<img src=""></img>
 
 ## Description
 
@@ -9,10 +8,12 @@ plungee is an iOS & Apple Watch app,  that tracks your vitals during cold plunge
 
 ### Key Features
 
-- Real-time tracking of vitals during cold plunges.
+- Real-time tracking of vitals during cold plunges & saunas.
 - In-depth analytics and long-term trend insights.
 
 ## Contact
+
+Maintained by @Tob028
 
 Follow us on socials:
 - Twitter: [@plungeeapp](https://x.com/plungeeapp)

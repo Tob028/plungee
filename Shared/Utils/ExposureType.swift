@@ -15,11 +15,11 @@ enum ExposureType: String, Hashable, Codable {
     var icon: String {
         switch self {
         case .plunge:
-            return "❄️"
+            return "🧊" // ❄️
         case .shower:
             return "🚿"
         case .sauna:
-            return "🔥"
+            return "🔥" // 😶‍🌫️
         }
     }
 }

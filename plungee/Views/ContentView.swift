@@ -18,10 +18,10 @@ struct ContentView: View {
                         Label("Dashboard", systemImage: "chart.xyaxis.line")
                     }
                 
-                StartView()
+                CalendarView()
                     .tag(1)
                     .tabItem {
-                        Label("Start", systemImage: "play.fill")
+                        Label("Calendar", systemImage: "calendar")
                     }
                 
                 SettingsView()

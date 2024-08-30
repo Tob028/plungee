@@ -24,7 +24,7 @@ struct MetricsView: View {
                 .foregroundStyle(.yellow)
                 .fontWeight(.semibold)
                 
-                HStack {
+                HStack(alignment: .center) {
                     Text(workoutManager.heartRate.formatted(.number.precision(.fractionLength(0))) + "bpm")
                         
                     

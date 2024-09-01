@@ -10,13 +10,13 @@ import SwiftUI
 @main
 struct plungeeApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-    //@StateObject private var databaseService: DatabaseService = DatabaseManager()
+    @StateObject private var databaseService: DatabaseManager = DatabaseManager.shared
     @StateObject private var watchConnector: WatchConnector = WatchConnector()
     
     var body: some Scene {
         WindowGroup {
             ContentView()
-                //.environmentObject(databaseService)
+                .environmentObject(databaseService)
                 .environmentObject(watchConnector)
                 .preferredColorScheme(.light)
         }

@@ -45,7 +45,7 @@ class WatchConnector: NSObject, WCSessionDelegate, ObservableObject {
             let jsonData = try JSONSerialization.data(withJSONObject: message, options: [])
             let workout = try JSONDecoder().decode(Session.self, from: jsonData)
             print(workout)
-            DatabaseManager.saveSessionToDB(session: workout)
+            DatabaseManager.shared.saveSessionToDB(session: workout)
         } catch {
             print("Failed to decode session: \(error.localizedDescription)")
         }

@@ -8,10 +8,12 @@
 import Foundation
 import FirebaseFirestore
 
-class DatabaseManager {
-    static let db = Firestore.firestore()
+class DatabaseManager: ObservableObject {
+    static let shared = DatabaseManager()
     
-    static func saveSessionToDB(session: Session) {
+    let db = Firestore.firestore()
+    
+    func saveSessionToDB(session: Session) {
         do {
             let data = try JSONEncoder().encode(session)
             
@@ -27,7 +29,7 @@ class DatabaseManager {
         }
     }
     
-    static func fetchSessionData(completion: @escaping ([Session]) -> Void) {
+    func fetchSessionData(completion: @escaping ([Session]) -> Void) {
         db.collection("sessions").getDocuments { querySnapshot, error in
             if let error = error {
                 print("Error fetching sessions: \(error.localizedDescription)")

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CalendarView: View {
+    @EnvironmentObject var databaseManager: DatabaseManager
     @State var sessions: [Session] = []
     
     var body: some View {
@@ -39,7 +40,7 @@ struct CalendarView: View {
     
     func fetchSessionData() {
         // fetch
-        DatabaseManager.fetchSessionData { data in
+        databaseManager.fetchSessionData { data in
             self.sessions = data
         }
     }
@@ -47,6 +48,7 @@ struct CalendarView: View {
 
 #Preview {
     CalendarView()
+        .environmentObject(DatabaseManager.shared)
 }
 
 struct ListItem: View {

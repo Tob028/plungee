@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var databaseManager: DatabaseManager
     
     var body: some View {
         NavigationStack {
@@ -35,5 +36,6 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView().environmentObject(WatchConnector())
+    ContentView()
+        .environmentObject(DatabaseManager.shared)
 }

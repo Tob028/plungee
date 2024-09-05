@@ -24,4 +24,12 @@ struct SessionStatistics: Codable, Identifiable {
         self.maxValue = maxValue
         self.avgValue = avgValue
     }
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case type
+        case minValue
+        case maxValue
+        case avgValue
+    }
 }

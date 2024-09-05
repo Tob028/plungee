@@ -45,7 +45,7 @@ struct MetricsView: View {
                 
                 Spacer()
             }
-            .font(.system(.title, design: .rounded))
+            .font(.system(.title, design: .rounded).lowercaseSmallCaps().monospacedDigit())
             .frame(maxWidth: .infinity, alignment: .leading)
             .ignoresSafeArea(edges: .bottom)
             .scenePadding()

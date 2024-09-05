@@ -25,6 +25,13 @@ struct SessionEvent: Codable, Identifiable {
         self.endDate = endDate
         //self.metadata = metadata
     }
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case type
+        case startDate
+        case endDate
+    }
 }
 
 extension HKWorkoutEventType {

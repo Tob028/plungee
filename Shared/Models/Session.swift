@@ -12,7 +12,6 @@ struct Session: Codable, Identifiable {
     
     var exposureType: ExposureType
     
-    //var duration: DateInterval
     var startDate: Date
     
     var endDate: Date
@@ -33,5 +32,14 @@ struct Session: Codable, Identifiable {
         self.endDate = endDate
         self.events = events
         self.statistics = statistics
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case exposureType
+        case startDate
+        case endDate
+        case statistics
+        case events
     }
 }

@@ -32,16 +32,20 @@ struct CalendarView: View {
             
             Spacer()
         }
-        .frame(maxWidth: .infinity, alignment: .center)
+        .frame(maxWidth: .infinity)
         .onAppear {
-            fetchSessionData()
+            Task {
+                await fetchSessionData()
+            }
         }
     }
     
-    func fetchSessionData() {
-        // fetch
-        databaseManager.fetchSessionData { data in
+    func fetchSessionData() async {
+        do {
+            let data = try await databaseManager.fetchSessionData()
             self.sessions = data
+        } catch {
+            print("Failed to fetch sessions: \(error.localizedDescription)")
         }
     }
 }

@@ -13,47 +13,26 @@ class DatabaseManager: ObservableObject {
     
     let db = Firestore.firestore()
     
-    func saveSessionToDB(session: Session) {
+    func saveSessionToDB(session: Session) async throws {
         do {
-            let data = try JSONEncoder().encode(session)
-            
-            if let sessionDictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                db.collection("sessions").addDocument(data: sessionDictionary) { error in
-                    if let error = error {
-                        print("Error saving session to Firestore: \(error.localizedDescription)")
-                    }
-                }
-            }
+            try db.collection("sessions").document(session.id.uuidString).setData(from: session)
         } catch {
             print(error.localizedDescription)
+            throw error
         }
     }
     
-    func fetchSessionData(completion: @escaping ([Session]) -> Void) {
-        db.collection("sessions").getDocuments { querySnapshot, error in
-            if let error = error {
-                print("Error fetching sessions: \(error.localizedDescription)")
-                completion([])
-                return
+    func fetchSessionData() async throws -> [Session] {
+        do {
+            let querySnapshot = try await db.collection("sessions").getDocuments()
+            let sessions: [Session] = try querySnapshot.documents.compactMap { document in
+                try document.data(as: Session.self)
             }
-            
-            guard let documents = querySnapshot?.documents else {
-                print("No documents found")
-                completion([])
-                return
-            }
-            
-            let sessions: [Session] = documents.compactMap { document in
-                do {
-                    let jsonData = try JSONSerialization.data(withJSONObject: document.data(), options: [])
-                    return try JSONDecoder().decode(Session.self, from: jsonData)
-                } catch {
-                    print("Error decoding session: \(error.localizedDescription)")
-                    return nil
-                }
-            }
-            
-            completion(sessions)
+            print(sessions)
+            return sessions
+        } catch {
+            print(error.localizedDescription)
+            throw error
         }
     }
 }

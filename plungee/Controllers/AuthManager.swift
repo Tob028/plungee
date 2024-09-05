@@ -12,11 +12,16 @@ import GoogleSignIn
 
 class AuthManager: ObservableObject {
     @Published var isLoggedIn = false
+    var loginMethod: LoginMethod?
     
     init() {
         Auth.auth().addStateDidChangeListener() { auth, user in
             self.isLoggedIn = user != nil
         }
+    }
+    
+    enum LoginMethod {
+        case google, email
     }
     
     func signInGoogle() {
@@ -50,7 +55,22 @@ class AuthManager: ObservableObject {
                     print(error.localizedDescription)
                     return
                 }
+                
+                self.loginMethod = .google
             }
         }
     }
+    
+    func signOut() {
+        do {
+            try Auth.auth().signOut()
+            
+            if self.loginMethod == .google {
+                GIDSignIn.sharedInstance.signOut()
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
 }
+

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @EnvironmentObject var authManager: AuthManager
+    
     var body: some View {
         VStack {
             VStack {
@@ -21,9 +23,12 @@ struct SettingsView: View {
             }
             .padding(.top, 30)
             
-            
-            
-            Spacer()
+            Button {
+                authManager.signOut()
+            } label: {
+                Text("sign out")
+            }
+
         }
         .padding()
     }
@@ -31,4 +36,5 @@ struct SettingsView: View {
 
 #Preview {
     SettingsView()
+        .environmentObject(AuthManager())
 }

@@ -52,6 +52,8 @@
 		BC4BCA462C89F831000DBA92 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BC4BCA452C89F831000DBA92 /* GoogleSignInSwift */; };
 		BC4BCA482C89F9D0000DBA92 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC4BCA472C89F9D0000DBA92 /* GoogleService-Info.plist */; };
 		BC4BCA4A2C8A07AC000DBA92 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4BCA492C8A07AC000DBA92 /* AuthManager.swift */; };
+		BCB71BAB2C8AF49200B1E0EF /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = BCB71BAA2C8AF49200B1E0EF /* .gitignore */; };
+		BCB71BAC2C8AF49200B1E0EF /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = BCB71BAA2C8AF49200B1E0EF /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +120,7 @@
 		BC4BCA402C89F075000DBA92 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		BC4BCA472C89F9D0000DBA92 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BC4BCA492C8A07AC000DBA92 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		BCB71BAA2C8AF49200B1E0EF /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				98F90AA82C81FD71004C1B7B /* README.md */,
+				BCB71BAA2C8AF49200B1E0EF /* .gitignore */,
 				98EC22872C7E2566007A7CDD /* plungee */,
 				98EC229B2C7E260C007A7CDD /* plungeeWatch Watch App */,
 				98EC22AC2C7E2639007A7CDD /* Shared */,
@@ -436,6 +440,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				98EC22B52C7E26B4007A7CDD /* Assets.xcassets in Resources */,
+				BCB71BAB2C8AF49200B1E0EF /* .gitignore in Resources */,
 				BC4BCA482C89F9D0000DBA92 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,6 +450,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				98EC22A42C7E260E007A7CDD /* Preview Assets.xcassets in Resources */,
+				BCB71BAC2C8AF49200B1E0EF /* .gitignore in Resources */,
 				98EC22B62C7E26B4007A7CDD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

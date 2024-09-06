@@ -174,6 +174,7 @@
 				98EC22D12C7E2881007A7CDD /* AppDelegate.swift */,
 				98EC22B82C7E27A7007A7CDD /* Controllers */,
 				98EC22B92C7E27AF007A7CDD /* Views */,
+				BC4BCA4B2C8A277A000DBA92 /* Components */,
 				98EC22B72C7E2767007A7CDD /* Info.plist */,
 				BC4BCA472C89F9D0000DBA92 /* GoogleService-Info.plist */,
 			);
@@ -236,13 +237,11 @@
 			children = (
 				98EC22D32C7E29BA007A7CDD /* ContentView.swift */,
 				BC4BCA402C89F075000DBA92 /* MainView.swift */,
-				98EC22C52C7E281E007A7CDD /* DashboardView.swift */,
-				98EC22C42C7E281E007A7CDD /* SettingsView.swift */,
-				98EC22C32C7E281E007A7CDD /* CalendarView.swift */,
-				98EC22C62C7E281F007A7CDD /* WatchReachableIndicator.swift */,
 				BC4BCA3A2C8628C2000DBA92 /* WelcomeView.swift */,
-				BC4BCA3E2C8628E3000DBA92 /* SignupView.swift */,
-				BC4BCA3C2C8628D7000DBA92 /* LoginView.swift */,
+				BC4BCA4D2C8A279D000DBA92 /* Dashboard */,
+				BC4BCA4F2C8A27A8000DBA92 /* Calendar */,
+				BC4BCA4E2C8A27A3000DBA92 /* Settings */,
+				BC4BCA4C2C8A278A000DBA92 /* Authentication */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -251,10 +250,8 @@
 			isa = PBXGroup;
 			children = (
 				98EC23032C7E2B54007A7CDD /* ContentView.swift */,
-				98EC22FA2C7E2B14007A7CDD /* SessionView.swift */,
-				98EC22FC2C7E2B14007A7CDD /* MetricsView.swift */,
-				98EC22F92C7E2B14007A7CDD /* ControlsView.swift */,
-				98EC22FD2C7E2B15007A7CDD /* SummaryView.swift */,
+				BC4BCA502C8A3285000DBA92 /* Session */,
+				BC4BCA512C8A328A000DBA92 /* Summary */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -285,6 +282,65 @@
 				98EC22E02C7E2AEF007A7CDD /* ElapsedTimeView.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		BC4BCA4B2C8A277A000DBA92 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				98EC22C62C7E281F007A7CDD /* WatchReachableIndicator.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		BC4BCA4C2C8A278A000DBA92 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				BC4BCA3C2C8628D7000DBA92 /* LoginView.swift */,
+				BC4BCA3E2C8628E3000DBA92 /* SignupView.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		BC4BCA4D2C8A279D000DBA92 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				98EC22C52C7E281E007A7CDD /* DashboardView.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		BC4BCA4E2C8A27A3000DBA92 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				98EC22C42C7E281E007A7CDD /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		BC4BCA4F2C8A27A8000DBA92 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				98EC22C32C7E281E007A7CDD /* CalendarView.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		BC4BCA502C8A3285000DBA92 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				98EC22FA2C7E2B14007A7CDD /* SessionView.swift */,
+				98EC22FC2C7E2B14007A7CDD /* MetricsView.swift */,
+				98EC22F92C7E2B14007A7CDD /* ControlsView.swift */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
+		BC4BCA512C8A328A000DBA92 /* Summary */ = {
+			isa = PBXGroup;
+			children = (
+				98EC22FD2C7E2B15007A7CDD /* SummaryView.swift */,
+			);
+			path = Summary;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -19,7 +19,14 @@ struct WelcomeView: View {
             VStack {
                 
                 Button {
-                    authManager.signInGoogle()
+                    Task {
+                        do {
+                            try await authManager.signInGoogle()
+                        } catch {
+                            print(error.localizedDescription)
+                            return
+                        }
+                    }
                 } label: {
                     HStack(alignment: .center) {
                         Image(systemName: "lock.fill")

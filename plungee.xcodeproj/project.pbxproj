@@ -54,6 +54,8 @@
 		BC4BCA4A2C8A07AC000DBA92 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4BCA492C8A07AC000DBA92 /* AuthManager.swift */; };
 		BCB71BAB2C8AF49200B1E0EF /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = BCB71BAA2C8AF49200B1E0EF /* .gitignore */; };
 		BCB71BAC2C8AF49200B1E0EF /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = BCB71BAA2C8AF49200B1E0EF /* .gitignore */; };
+		BCB71BAE2C8AFDB600B1E0EF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB71BAD2C8AFDB600B1E0EF /* User.swift */; };
+		BCB71BAF2C8AFDB600B1E0EF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB71BAD2C8AFDB600B1E0EF /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +123,7 @@
 		BC4BCA472C89F9D0000DBA92 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BC4BCA492C8A07AC000DBA92 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		BCB71BAA2C8AF49200B1E0EF /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		BCB71BAD2C8AFDB600B1E0EF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +278,7 @@
 				98EC22D92C7E2AEF007A7CDD /* Session.swift */,
 				98EC22DA2C7E2AEF007A7CDD /* SessionEvent.swift */,
 				98EC22DB2C7E2AEF007A7CDD /* SessionStatistic.swift */,
+				BCB71BAD2C8AFDB600B1E0EF /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -470,6 +474,7 @@
 				98EC22CD2C7E281F007A7CDD /* DashboardView.swift in Sources */,
 				BC4BCA3F2C8628E3000DBA92 /* SignupView.swift in Sources */,
 				98EC22D22C7E2881007A7CDD /* AppDelegate.swift in Sources */,
+				BCB71BAE2C8AFDB600B1E0EF /* User.swift in Sources */,
 				98EC22F32C7E2AF0007A7CDD /* ExposureType.swift in Sources */,
 				98EC22F12C7E2AF0007A7CDD /* ElapsedTimeView.swift in Sources */,
 				98EC22C02C7E2809007A7CDD /* WatchConnector.swift in Sources */,
@@ -494,6 +499,7 @@
 				98EC22D72C7E2AD7007A7CDD /* WatchConnectorIOS.swift in Sources */,
 				98EC22F22C7E2AF0007A7CDD /* ElapsedTimeView.swift in Sources */,
 				98EC22EA2C7E2AF0007A7CDD /* SessionStatistic.swift in Sources */,
+				BCB71BAF2C8AFDB600B1E0EF /* User.swift in Sources */,
 				98EC22D82C7E2AD7007A7CDD /* WorkoutManager.swift in Sources */,
 				98EC229D2C7E260C007A7CDD /* plungeeWatchApp.swift in Sources */,
 				98EC22F42C7E2AF0007A7CDD /* ExposureType.swift in Sources */,

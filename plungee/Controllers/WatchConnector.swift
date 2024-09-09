@@ -39,7 +39,7 @@ class WatchConnector: NSObject, WCSessionDelegate, ObservableObject {
         updateConnectionStatus(session)
     }
     
-    // MARK: Handle new session
+    // Handle new session
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
         Task {
             do {

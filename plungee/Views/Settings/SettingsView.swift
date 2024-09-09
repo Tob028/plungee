@@ -24,7 +24,12 @@ struct SettingsView: View {
             .padding(.top, 30)
             
             Button {
-                authManager.signOut()
+                do {
+                    try authManager.signOut()
+                } catch {
+                    print(error.localizedDescription)
+                    return
+                }
             } label: {
                 Text("sign out")
             }

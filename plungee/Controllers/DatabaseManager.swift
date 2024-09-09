@@ -14,25 +14,19 @@ class DatabaseManager: ObservableObject {
     let db = Firestore.firestore()
     
     func saveSessionToDB(session: Session) async throws {
-        do {
-            try db.collection("sessions").document(session.id.uuidString).setData(from: session)
-        } catch {
-            print(error.localizedDescription)
-            throw error
-        }
+        try db.collection("sessions").document(session.id.uuidString).setData(from: session)
     }
     
     func fetchSessionData() async throws -> [Session] {
-        do {
-            let querySnapshot = try await db.collection("sessions").getDocuments()
-            let sessions: [Session] = try querySnapshot.documents.compactMap { document in
-                try document.data(as: Session.self)
-            }
-            print(sessions)
-            return sessions
-        } catch {
-            print(error.localizedDescription)
-            throw error
+        let querySnapshot = try await db.collection("sessions").getDocuments()
+        let sessions: [Session] = try querySnapshot.documents.compactMap { document in
+            try document.data(as: Session.self)
         }
+        return sessions
+    }
+    
+    
+    func saveNewUser(user: User) async throws {
+        try db.collection("users").document(user.id).setData(from: user)
     }
 }

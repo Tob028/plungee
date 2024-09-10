@@ -23,6 +23,8 @@ struct SettingsView: View {
             }
             .padding(.top, 30)
             
+            Spacer()
+            
             Button {
                 do {
                     try authManager.signOut()
@@ -31,11 +33,18 @@ struct SettingsView: View {
                     return
                 }
             } label: {
-                Text("sign out")
+                Text("Sign out")
+                    .font(.title3)
+                    .bold()
             }
+            .padding(.vertical, 15)
+            .padding(.horizontal, 50)
+            .background(.gray.opacity(0.3))
+            .shadow(radius: 30)
+            .foregroundStyle(.black)
+            .clipShape(Capsule())
 
         }
-        .padding()
     }
 }
 

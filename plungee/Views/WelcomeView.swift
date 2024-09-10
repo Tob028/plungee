@@ -12,9 +12,15 @@ struct WelcomeView: View {
     
     var body: some View {
         VStack {
-            Text("Welcome to plungee")
-                .font(.largeTitle)
-                .bold()
+            VStack {
+                Text("Welcome to plungee")
+                    .font(.largeTitle)
+                    .bold()
+                
+                Text("Get started on your cold therapy journey")
+                    .font(.headline)
+            }
+            .frame(alignment: .leading)
 
             VStack {
                 
@@ -30,7 +36,7 @@ struct WelcomeView: View {
                 } label: {
                     HStack(alignment: .center) {
                         Image(systemName: "lock.fill")
-                            .font(.largeTitle)
+                            .font(.title)
                         
                         Text("Continue with Google")
                             .font(.title3)
@@ -39,28 +45,10 @@ struct WelcomeView: View {
                     .padding()
                     .frame(maxWidth: .infinity)
                     .background(.gray.opacity(0.3))
-                    .shadow(radius: 10)
+                    .shadow(radius: 30)
                     .foregroundStyle(.black)
                     .clipShape(Capsule())
                 }
-                
-                /*
-                Text("Login")
-                    .font(.title2)
-                    .bold()
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .background(.gray.opacity(0.3))
-                    .clipShape(RoundedRectangle(cornerRadius: 25.0))
-
-                Text("Sign Up")
-                    .font(.title2)
-                    .bold()
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .background(.gray.opacity(0.3))
-                    .clipShape(RoundedRectangle(cornerRadius: 25.0))
-                 */
             }
             .scenePadding()
         }

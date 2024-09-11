@@ -12,7 +12,7 @@ struct plungeeApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject private var databaseManager = DatabaseManager.shared
     @StateObject private var watchConnector = WatchConnector()
-    @StateObject private var authManager = AuthManager()
+    @StateObject private var authManager = AuthManager.shared
     
     var body: some Scene {
         WindowGroup {

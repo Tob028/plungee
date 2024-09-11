@@ -11,6 +11,8 @@ import FirebaseAuth
 import GoogleSignIn
 
 class AuthManager: ObservableObject {
+    static let shared = AuthManager()
+    
     @Published var isLoggedIn = false
     @Published var user: User?
     

@@ -10,6 +10,8 @@ import Foundation
 struct Session: Codable, Identifiable {
     var id: UUID = UUID()
     
+    var uid: String?
+    
     var exposureType: ExposureType
     
     var startDate: Date
@@ -36,6 +38,7 @@ struct Session: Codable, Identifiable {
     
     enum CodingKeys: String, CodingKey {
         case id
+        case uid
         case exposureType
         case startDate
         case endDate

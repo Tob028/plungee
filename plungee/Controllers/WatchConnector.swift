@@ -44,7 +44,15 @@ class WatchConnector: NSObject, WCSessionDelegate, ObservableObject {
         Task {
             do {
                 let jsonData = try JSONSerialization.data(withJSONObject: message, options: [])
-                let workout = try JSONDecoder().decode(Session.self, from: jsonData)
+                var workout = try JSONDecoder().decode(Session.self, from: jsonData)
+                
+                guard let user = AuthManager.shared.user else {
+                    print("user object unavailable")
+                    return
+                }
+                
+                workout.uid = user.id
+                
                 try await DatabaseManager.shared.saveSessionToDB(session: workout)
             } catch {
                 print("Failed to decode session: \(error.localizedDescription)")

@@ -73,7 +73,7 @@ struct ListItem: View {
                     .font(.title2)
                     .bold()
                 
-                Text("\(sessionDuration()) min")
+                Text(sessionDuration())
                     .font(.headline)
             }
             
@@ -90,7 +90,13 @@ struct ListItem: View {
         return dateFormatter.string(from: session.startDate)
     }
     
-    func sessionDuration() -> Int {
-        return Int(session.endDate.timeIntervalSince(session.startDate) / 60)
+    func sessionDuration() -> String {
+        let minutes = Int(session.endDate.timeIntervalSince(session.startDate) / 60)
+        
+        if minutes == 0 {
+            return "\(Int(session.endDate.timeIntervalSince(session.startDate))) sec"
+        }
+        
+        return "\(minutes) min"
     }
 }

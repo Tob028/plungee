@@ -44,7 +44,6 @@ struct SummaryView: View {
             .navigationTitle("Summary")
             .navigationBarTitleDisplayMode(.inline)
             .onAppear {
-                // Workout data is ready
                 prepareAndSendSession()
             }
         }
@@ -60,18 +59,24 @@ struct SummaryView: View {
             )
         } ?? []
         
-        let sessionStatistics: [SessionStatistics] = workoutManager.workout?.allStatistics.compactMap { (quantityType, statistics) in
-            let unit = HKUnit(from: "count/min")
-        
+        let sessionStatistics: [SessionStatistics] = workoutManager.workout?.allStatistics.compactMap { (quantityType, statistics) -> SessionStatistics? in
+            let unit: HKUnit
+            switch quantityType.identifier {
+            case HKQuantityTypeIdentifier.heartRate.rawValue:
+                unit = HKUnit(from: "count/min")
+            default:
+                return nil
+            }
+            
             let avgValue = statistics.averageQuantity()?.doubleValue(for: unit)
             let maxValue = statistics.maximumQuantity()?.doubleValue(for: unit)
             let minValue = statistics.minimumQuantity()?.doubleValue(for: unit)
-            
+
             return SessionStatistics(
                 type: quantityType.identifier,
-                minValue: Int(minValue ?? 0),
-                maxValue: Int(maxValue ?? 0),
-                avgValue: Int(avgValue ?? 0)
+                minValue: Int(minValue!),
+                maxValue: Int(maxValue!),
+                avgValue: Int(avgValue!)
             )
         } ?? []
         

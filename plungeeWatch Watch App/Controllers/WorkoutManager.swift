@@ -13,7 +13,6 @@ class WorkoutManager: NSObject, ObservableObject {
     
     @Published var showingSummaryView: Bool = false {
         didSet {
-            // Sheet dismissed
             if showingSummaryView == false {
                 resetWorkout()
             }
@@ -48,11 +47,10 @@ class WorkoutManager: NSObject, ObservableObject {
         session?.delegate = self
         builder?.delegate = self
         
-        // Start Tracking
         let startDate = Date()
         session?.startActivity(with: startDate)
         builder?.beginCollection(withStart: startDate, completion: { (success, error) in
-            // Started
+            // started
         })
     }
     

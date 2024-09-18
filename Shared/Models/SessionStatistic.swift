@@ -9,13 +9,9 @@ import Foundation
 
 struct SessionStatistics: Codable, Identifiable {
     var id: UUID = UUID()
-    
     var type: String
-    
     var minValue: Int
-    
     var maxValue: Int
-    
     var avgValue: Int
     
     init(type: String, minValue: Int, maxValue: Int, avgValue: Int) {

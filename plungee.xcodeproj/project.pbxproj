@@ -232,9 +232,9 @@
 		98EC22B82C7E27A7007A7CDD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				98EC22BD2C7E2809007A7CDD /* WatchConnector.swift */,
 				BC4BCA492C8A07AC000DBA92 /* AuthManager.swift */,
 				98EC22BC2C7E2809007A7CDD /* DatabaseManager.swift */,
+				98EC22BD2C7E2809007A7CDD /* WatchConnector.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -668,6 +668,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.tobb.plungee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -704,6 +705,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.tobb.plungee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

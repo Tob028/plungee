@@ -38,6 +38,11 @@ struct CalendarView: View {
                 await fetchSessionData()
             }
         }
+        .refreshable {
+            Task {
+                await fetchSessionData()
+            }
+        }
     }
     
     func fetchSessionData() async {

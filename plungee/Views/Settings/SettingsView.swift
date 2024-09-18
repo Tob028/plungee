@@ -21,7 +21,6 @@ struct SettingsView: View {
                     .font(.title)
                     .fontWeight(.semibold)
             }
-            .padding(.top, 30)
             
             Spacer()
             
@@ -43,8 +42,8 @@ struct SettingsView: View {
             .shadow(radius: 30)
             .foregroundStyle(.black)
             .clipShape(Capsule())
-
         }
+        .scenePadding()
     }
 }
 

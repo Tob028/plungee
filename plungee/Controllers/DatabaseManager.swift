@@ -18,10 +18,12 @@ class DatabaseManager: ObservableObject {
         try db.collection("sessions").document(session.id.uuidString).setData(from: session)
     }
     
-    func fetchSessionData() async throws -> [Session] {
+    @MainActor
+    func getSessions() async throws -> [Session] {
         guard let user = authManager.user else {
             throw NSError(domain: "SessionFetch", code: -1, userInfo: [NSLocalizedDescriptionKey: "No user signed in."])
         }
+        
         
         let uid = user.id
         
@@ -40,5 +42,19 @@ class DatabaseManager: ObservableObject {
     
     func saveNewUser(user: User) async throws {
         try db.collection("users").document(user.id).setData(from: user)
+    }
+    
+    func getUserDoc(uid: String) async throws -> DocumentSnapshot {
+        let doc = try await db.collection("users").document(uid).getDocument()
+        
+        return doc
+    }
+    
+    func getUser(uid: String) async throws -> User {
+        let doc = try await getUserDoc(uid: uid)
+        
+        let user: User = try doc.data(as: User.self)
+        
+        return user
     }
 }

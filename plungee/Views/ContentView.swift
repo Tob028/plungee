@@ -11,10 +11,10 @@ import FirebaseAuth
 struct ContentView: View {
     @EnvironmentObject var authManager: AuthManager
     @State private var isLoggedIn = Auth.auth().currentUser != nil
-    
+            
     var body: some View {
         NavigationStack {
-            if (authManager.isLoggedIn) {
+            if authManager.isLoggedIn {
                 MainView()
             } else {
                 WelcomeView()

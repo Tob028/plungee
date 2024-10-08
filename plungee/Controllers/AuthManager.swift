@@ -16,16 +16,21 @@ class AuthManager: ObservableObject {
     @Published var isLoggedIn = false
     @Published var user: User?
     
-    var loginMethod: LoginMethod?
-    
     init() {
-        _ = Auth.auth().addStateDidChangeListener() { auth, user in
-            self.isLoggedIn = user != nil
+        if let currentUser = Auth.auth().currentUser {
+            Task {
+                do {
+                    let fetchedUser = try await DatabaseManager.shared.getUser(uid: currentUser.uid)
+                    DispatchQueue.main.async {
+                        self.user = fetchedUser
+                    }
+                } catch {
+                    print(error.localizedDescription)
+                }
+            }
+            
+            self.isLoggedIn = true
         }
-    }
-    
-    enum LoginMethod {
-        case google, apple, email
     }
     
     @MainActor
@@ -55,29 +60,39 @@ class AuthManager: ObservableObject {
 
         let authResult = try await Auth.auth().signIn(with: credential)
         
-        self.loginMethod = .google
+        let userDocSnapshot = try await DatabaseManager.shared.getUserDoc(uid: authResult.user.uid)
         
-        let newUserObject = User(
-            id: authResult.user.uid,
-            email: authResult.user.email ?? "",
-            displayName: authResult.user.displayName ?? "",
-            createdAt: Date()
-        )
+        if userDocSnapshot.exists {
+            let userObject = try userDocSnapshot.data(as: User.self)
+            self.user = userObject
+        } else {
+            let newUserObject = User(
+                id: authResult.user.uid,
+                email: authResult.user.email ?? "",
+                displayName: authResult.user.displayName ?? "",
+                createdAt: Date()
+            )
+            
+            self.user = newUserObject
+            
+            try await DatabaseManager.shared.saveNewUser(user: newUserObject)
+        }
         
-        self.user = newUserObject
-        
-        try await DatabaseManager.shared.saveNewUser(user: newUserObject)
+        self.isLoggedIn = true
     }
     
+    @MainActor
     func signOut() throws {
         try Auth.auth().signOut()
         
-        if self.loginMethod == .google {
+        debugPrint("Provider ID = \(Auth.auth().currentUser?.providerID)")
+        
+        if Auth.auth().currentUser?.providerID == "google.com" {
             GIDSignIn.sharedInstance.signOut()
         }
         
         self.user = nil
-        self.loginMethod = nil
+        self.isLoggedIn = false
     }
 }
 

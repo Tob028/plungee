@@ -26,8 +26,6 @@ enum ExposureType: String, Hashable, Codable {
 
 var exposureTypes: [ExposureType] = [.plunge, .shower, .sauna]
 
-
-
 extension ExposureType: Identifiable {
     var id: String { rawValue }
 }

@@ -47,7 +47,7 @@ struct CalendarView: View {
     
     func fetchSessionData() async {
         do {
-            let data = try await databaseManager.fetchSessionData()
+            let data = try await databaseManager.getSessions()
             self.sessions = data
         } catch {
             print("Failed to fetch sessions: \(error.localizedDescription)")

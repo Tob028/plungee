@@ -22,7 +22,7 @@ class WatchConnector: NSObject, WCSessionDelegate, ObservableObject {
     }
     
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: (any Error)?) {
-        if (error != nil) {
+        if error != nil {
             print(error?.localizedDescription ?? "")
         }
     }
